@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Sample Post 1",
+    "description": "This is a sample post for fallback dummy data",
+    "image": "https://via.placeholder.com/300",
+    "date": "2024-01-01"
+  },
+  {
+    "id": 2,
+    "title": "Sample Post 2",
+    "description": "Another sample post with placeholder content",
+    "image": "https://via.placeholder.com/300",
+    "date": "2024-01-02"
+  },
+  {
+    "id": 3,
+    "title": "Sample Post 3",
+    "description": "Third sample post for testing purposes",
+    "image": "https://via.placeholder.com/300",
+    "date": "2024-01-03"
+  }
+]

@@ -1,0 +1,23 @@
+/* Custom reusable components (buttons, cards, etc.)
+
+/* Button component example */
+/* .btn {
+  @apply px-4 py-2 rounded font-semibold transition-colors;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-300 text-gray-800 hover:bg-gray-400;
+}
+
+/* Card component example */
+/* .card {
+  @apply bg-white rounded-lg shadow p-4;
+}
+
+.card-hover {
+  @apply hover:shadow-lg transition-shadow;
+} */ 
