@@ -1,0 +1,50 @@
+[
+    {
+        "id":1,
+        "category":"adventure",
+        "bg_image":"./src/assets/images/Hero bg.avif",
+        "fav":0,
+        "title":"California Sunset/Twilight Boat Cruise",
+        "days":2,
+        "nights":3,
+        "price":10,
+        "rating":1,
+        "reviews":100
+    },
+    {
+        "id":2,
+        "category":"beach",
+        "bg_image":"./src/assets/images/Hero bg.avif",
+        "fav":0,
+        "title":"California Sunset/Twilight Boat Cruise",
+        "days":2,
+        "nights":3,
+        "price":20,
+        "rating":2,
+        "reviews":200
+    },
+    {
+        "id":3,
+        "category":"cruise",
+        "bg_image":"./src/assets/images/Hero bg.avif",
+        "fav":0,
+        "title":"California Sunset/Twilight Boat Cruise",
+        "days":2,
+        "nights":3,
+        "price":50,
+        "rating":3,
+        "reviews":300
+    },
+    {
+        "id":4,
+        "category":"fd",
+        "bg_image":"./src/assets/images/Hero bg.avif",
+        "fav":0,
+        "title":"California Sunset/Twilight Boat Cruise",
+        "days":2,
+        "nights":3,
+        "price":48.25,
+        "rating":4.96,
+        "reviews":400
+    }
+]

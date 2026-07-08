@@ -10,8 +10,8 @@
     <header>
       <section class="bg-black flex items-center justify-evenly h-10 text-lg">
         <div class="flex items-center justify-evenly space-between w-2/5">
-          <img src="./src/assets/arrow-down.svg.png" alt="Logo" />
-          <p class="text-white align-middle ">
+          <img src="./src/assets/images/arrow-down.svg.png" alt="Logo" />
+          <p class="text-white align-middle">
             Unlock Your Travel with Trivela - Your Gateway to Extraordinary
             Experiences
           </p>
@@ -20,7 +20,7 @@
       </section>
       <div class="flex items-center justify-between h-2/5 p-5 text-lg">
         <a href="#" class="object-contain pl-1"
-          ><img class="h-8" src="./src/assets/logo.svg fill.png" alt="Logo"
+          ><img class="h-8" src="./src/assets/images/logo.svg fill.png" alt="Logo"
         /></a>
         <div class="z-10">
           <div>
@@ -246,7 +246,7 @@
       <section
         class="relative h-4/5 bg-cover bg-center pb-40"
         style="
-          background-image: url('./src/assets/images/Hero\ bg.avif');
+          background-image: url(&quot;./src/assets/images/Hero\ bg.avif&quot;);
         "
       >
         <div class="relative flex items-center justify-center">
@@ -268,74 +268,92 @@
           </div>
           <div class="pt-10 pb-10 flex flex-col items-center justify-center">
             <div class="overflow-hidden rounded-2xl border-3 m-3">
-              <img class="h-40" src="./src/assets/images/temp photo.avif" alt="" />
+              <img
+                class="h-40"
+                src="./src/assets/images/temp photo.avif"
+                alt=""
+              />
             </div>
             <div class="overflow-hidden rounded-2xl border-3 m-3">
-              <img class="h-40" src="./src/assets/images/temp photo.avif" alt="" />
+              <img
+                class="h-40"
+                src="./src/assets/images/temp photo.avif"
+                alt=""
+              />
             </div>
             <div class="overflow-hidden rounded-2xl border-3 m-3">
-              <img class="h-40 rounded" src="./src/assets/images/temp photo.avif" alt="" />
+              <img
+                class="h-40 rounded"
+                src="./src/assets/images/temp photo.avif"
+                alt=""
+              />
             </div>
           </div>
         </div>
         <section
-          class="absolute translate-x-1/2  flex justify-center bg-slate-100 z-10 rounded-3xl"
+          class="absolute left-1/2 -translate-x-1/2 flex justify-center bg-slate-100 z-10 rounded-3xl"
         >
           <div class="w-full max-w-6xl bg-white rounded-3xl shadow-xl p-8">
             <!-- Navigation -->
             <div class="flex items-center justify-between mb-8">
-              <div class="flex items-center gap-2 relative rounded-full" id="tabs">
-
+              <div
+                class="flex items-center gap-2 relative rounded-full"
+                id="tabs"
+              >
                 <!-- sliding indicator -->
-                 <div id="indicator" class="absolute bg-black rounded-full transition-all duration-500 ease-in-out">
-                 </div>
+                <div
+                  id="indicator"
+                  class="absolute bg-black rounded-full transition-all duration-500 ease-in-out"
+                ></div>
 
                 <button
                   class="text-amber-300 px-6 py-3 rounded-full font-medium z-10 tab hover:text-amber-300"
                 >
                   Tours
                 </button>
-  
+
                 <button
-                  class="px-5 py-3 rounded-full text-gray-500  transition z-10 tab hover:text-amber-300"
+                  class="px-5 py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300"
                 >
                   Hotels
                 </button>
-  
+
                 <button
-                  class="px-5 py-3 rounded-full text-gray-500  transition z-10 tab hover:text-amber-300"
+                  class="px-5 py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300"
                 >
                   Tickets
                 </button>
-  
+
                 <button
-                  class="px-5 py-3 rounded-full text-gray-500  transition z-10  tab hover:text-amber-300"
+                  class="px-5 py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300"
                 >
                   Rental
                 </button>
-  
+
                 <button
-                  class="px-5 py-3 rounded-full text-gray-500  transition z-10 tab hover:text-amber-300"
+                  class="px-5 py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300"
                 >
                   Activities
                 </button>
               </div>
-  
+
               <a href="#" class="text-sm text-gray-400 hover:text-black">
                 Need some help?
               </a>
             </div>
-  
+
             <!-- Search Card -->
-  
+
             <div
               class="flex items-center rounded-2xl border border-gray-200 divide-x overflow-visible"
             >
               <!-- Location -->
-  
+
               <div class="flex-1 px-6 py-5">
-                <label class="block text-xs text-gray-400 mb-2"> Location </label>
-  
+                <label class="block text-xs text-gray-400 mb-2">
+                  Location
+                </label>
+
                 <select
                   class="w-full bg-transparent outline-none font-semibold cursor-pointer"
                 >
@@ -344,33 +362,35 @@
                   <option>Chicago</option>
                 </select>
               </div>
-  
+
               <!-- Check In -->
-  
+
               <div class="flex-1 px-6 py-5">
-                <label class="block text-xs text-gray-400 mb-2"> Check In </label>
-  
+                <label class="block text-xs text-gray-400 mb-2">
+                  Check In
+                </label>
+
                 <input
                   type="date"
                   class="w-full bg-transparent outline-none font-semibold cursor-pointer"
                 />
               </div>
-  
+
               <!-- Check Out -->
-  
+
               <div class="flex-1 px-6 py-5">
                 <label class="block text-xs text-gray-400 mb-2">
                   Check Out
                 </label>
-  
+
                 <input
                   type="date"
                   class="w-full bg-transparent outline-none font-semibold cursor-pointer"
                 />
               </div>
-  
+
               <!-- Guests -->
-  
+
               <div class="relative flex-1 px-6 py-5">
                 <button
                   id="guestBtn"
@@ -378,12 +398,12 @@
                 >
                   <div class="text-left">
                     <p class="text-xs text-gray-400">Guests</p>
-  
+
                     <p id="guestText" class="font-semibold mt-1">
                       2 Adults, 2 Children
                     </p>
                   </div>
-  
+
                   <svg
                     class="w-5 h-5 text-gray-500"
                     fill="none"
@@ -398,22 +418,22 @@
                     />
                   </svg>
                 </button>
-  
+
                 <!-- Dropdown -->
-  
+
                 <div
                   id="guestMenu"
                   class="hidden absolute right-0 top-full mt-4 w-80 bg-white rounded-2xl shadow-2xl border border-gray-200 p-6 z-50"
                 >
                   <!-- Adults -->
-  
+
                   <div class="flex justify-between items-center mb-6">
                     <div>
                       <h3 class="font-semibold">Adults</h3>
-  
+
                       <p class="text-sm text-gray-400">Age 13+</p>
                     </div>
-  
+
                     <div class="flex items-center gap-4">
                       <button
                         id="adultMinusBtn"
@@ -421,9 +441,9 @@
                       >
                         −
                       </button>
-  
+
                       <span id="adultCount" class="font-semibold"> 2 </span>
-  
+
                       <button
                         id="adultPlusBtn"
                         class="w-9 h-9 rounded-full border hover:bg-black hover:text-white transition"
@@ -432,16 +452,16 @@
                       </button>
                     </div>
                   </div>
-  
+
                   <!-- Children -->
-  
+
                   <div class="flex justify-between items-center">
                     <div>
                       <h3 class="font-semibold">Children</h3>
-  
+
                       <p class="text-sm text-gray-400">Age 0-12</p>
                     </div>
-  
+
                     <div class="flex items-center gap-4">
                       <button
                         id="childMinusBtn"
@@ -449,9 +469,9 @@
                       >
                         −
                       </button>
-  
+
                       <span id="childCount" class="font-semibold"> 2 </span>
-  
+
                       <button
                         id="childPlusBtn"
                         class="w-9 h-9 rounded-full border hover:bg-black hover:text-white transition"
@@ -462,19 +482,19 @@
                   </div>
                 </div>
               </div>
-  
+
               <!-- Search -->
-  
+
               <div class="px-5">
                 <button
                   class="hover:text-amber-300 bg-black text-white px-8 py-4 rounded-full flex items-center gap-2 hover:bg-gray-800 transition"
                 >
                   <img
-                    src="./src/assets/search svg.png"
+                    src="./src/assets/images/search svg.png"
                     alt="Search Icon"
                     class="w-4"
                   />
-  
+
                   <span>Search</span>
                 </button>
               </div>
@@ -482,9 +502,526 @@
           </div>
         </section>
       </section>
-      
+      <!-- featured tours -->
+      <section
+        class="w-full flex items-center justify-center pt-40"
+      >
+        <div class="flex flex-col w-3/4">
+          <!-- first half -->
+          <div class="flex justify-between">
+            <!-- highlight text -->
+            <div class="flex flex-col items-start gap-1.5">
+              <p class="text-5xl font-bold">Our Featured Tours</p>
+              <p class="text-gray-500 text-xl">
+                Favourite destinations based on customer reviews
+              </p>
+            </div>
+            <!-- filters -->
+            <div class="self-end pb-5 flex flex-col">
+              <ul class="flex gap-6">
+                <!-- categories -->
+                <li
+                  class="flex flex-col items-center gap-2 relative group  pb-6"
+                >
+                  <div
+                    class="rounded-4xl p-3 text-lg flex items-center gap-2 border"
+                  >
+                    <div id="category-btn" class="w-20">Categories</div>
+                    <img
+                      src=".\src\assets\arrow-down.svg.png"
+                      alt=""
+                      class="h-4"
+                    />
+                  </div>
+                  <div
+                    class="absolute left-0 mt-16 w-48 rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col gap-2"
+                  >
+                    <button
+                      value="all"
+                      id="cat_options"
+                      class="hover:bg-black hover:text-amber-300 rounded"
+                    >
+                      All
+                    </button>
+                    <button
+                      value="adventure"
+                      id="cat_options"
+                      class="hover:bg-black hover:text-amber-300 rounded"
+                    >
+                      Adventure
+                    </button>
+                    <button
+                      value="beach"
+                      id="cat_options"
+                      class="hover:bg-black hover:text-amber-300 rounded"
+                    >
+                      Beach
+                    </button>
+                    <button
+                      value="cruise"
+                      id="cat_options"
+                      class="hover:bg-black hover:text-amber-300 rounded"
+                    >
+                      Cruise
+                    </button>
+                    <button
+                      value="fd"
+                      id="cat_options"
+                      class="hover:bg-black hover:text-amber-300 rounded"
+                    >
+                      Foods & Drinks
+                    </button>
+                  </div>
+                </li>
+                <!-- Duration -->
+                <li
+                  class="flex flex-col items-center gap-2 relative group pb-6"
+                >
+                  <div
+                    class="border rounded-4xl p-3 text-lg flex items-center gap-2"
+                  >
+                    <span id="duration-btn">Duration</span>
+                    <img
+                      src=".\src\assets\arrow-down.svg.png"
+                      alt=""
+                      class="h-4"
+                    />
+                  </div>
+                  <div
+                    class="absolute w-64 left-0 mt-16 rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col p-5 z-10"
+                  >
+                    <!-- Days -->
+
+                    <div class="flex justify-between items-center mb-6">
+                      <div>
+                        <h3 class="font-semibold">Days</h3>
+
+                        <!-- <p class="text-sm text-gray-400">Age 13+</p> -->
+                      </div>
+
+                      <div class="flex items-center gap-4">
+                        <button
+                          id="daysMinusBtn"
+                          class="w-9 h-9 rounded-full border hover:bg-black hover:text-white transition"
+                        >
+                          −
+                        </button>
+
+                        <span id="daysCount" class="font-semibold"> 2 </span>
+
+                        <button
+                          id="daysPlusBtn"
+                          class="w-9 h-9 rounded-full border hover:bg-black hover:text-white transition"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    <!-- Night -->
+
+                    <div class="flex justify-between items-center">
+                      <div>
+                        <h3 class="font-semibold">Nights</h3>
+
+                        <!-- <p class="text-sm text-gray-400">Age 0-12</p> -->
+                      </div>
+
+                      <div class="flex items-center gap-4">
+                        <button
+                          id="nightMinusBtn"
+                          class="w-9 h-9 rounded-full border hover:bg-black hover:text-white transition"
+                        >
+                          −
+                        </button>
+
+                        <span id="nightCount" class="font-semibold"> 2 </span>
+
+                        <button
+                          id="nightPlusBtn"
+                          class="w-9 h-9 rounded-full border hover:bg-black hover:text-white transition"
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <!-- Rating -->
+                <li
+                  class="flex flex-col items-center gap-2 relative group pb-6"
+                >
+                  <div
+                    class="border rounded-4xl p-3 text-lg flex items-center gap-2"
+                  >
+                    <div id="rating-btn" class="transition duration-1000">Rating</div>
+                    <img
+                      src=".\src\assets\arrow-down.svg.png"
+                      alt=""
+                      class="h-4"
+                    />
+                  </div>
+
+                  <div
+                    class="absolute left-0 mt-16 rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col gap-2 items-start"
+                  >
+                    <button
+                      value="1"
+                      class="hover:bg-black hover:text-amber-300 tourRating"
+                    >
+                      ★☆☆☆☆
+                    </button>
+                    <button
+                      value="2"
+                      class="hover:bg-black hover:text-amber-300 tourRating"
+                    >
+                      ★★☆☆☆
+                    </button>
+                    <button
+                      value="3"
+                      class="hover:bg-black hover:text-amber-300 tourRating"
+                    >
+                      ★★★☆☆
+                    </button>
+                    <button
+                      value="4"
+                      class="hover:bg-black hover:text-amber-300 tourRating"
+                    >
+                      ★★★★☆
+                    </button>
+                    <button
+                      value="5"
+                      class="hover:bg-black hover:text-amber-300 tourRating"
+                    >
+                      ★★★★★
+                    </button>
+                  </div>
+                </li>
+                <!-- Price range -->
+                <li
+                  class="flex flex-col items-center gap-2 relative group pb-6"
+                >
+                  <div
+                    class="border rounded-4xl p-3 text-lg flex items-center gap-2"
+                  >
+                    <span id="price-range-btn">Price Range</span>
+                    <img
+                      src=".\src\assets\arrow-down.svg.png"
+                      alt=""
+                      class="h-4"
+                    />
+                  </div>
+                  <div
+                    class="absolute left-0 mt-16 w-40 rounded-lg bg-white shadow-lg 
+                    opacity-0 invisible group-hover:visible group-hover:opacity-100 
+                    transition duration-200 flex flex-col gap-1 text-lg
+                    "
+                  >
+                    <div class="flex justify-between p-2">
+                      <label for="From">From :</label>
+                      <input
+                        type="text"
+                        class="bg-gray-300 w-1/2 text-center rounded-xl "
+                        id="ffrom"
+                      />
+                    </div>
+                    <div class="flex justify-between p-2">
+                      <label for="To">To :</label>
+                      <input
+                        type="text"
+                        class="bg-gray-300 w-1/2 text-center rounded-xl"
+                        id="fto"
+                      />
+                    </div>
+                    <div class="w-full flex flex-col items-center gap-2">
+                      <button value="0" id="lowSort" class="text-center border rounded-2xl p-2 bg-black text-white sort">Low to High</button>
+                      <button value="1" id="highSort" class="text-center border rounded-2xl p-2 sort">High to Low</button>
+                    </div>
+
+                  </div>
+                </li>
+              </ul>
+              <button
+                class="self-end text-center shadow-2xl w-1/4 rounded-4xl bg-black text-white p-2 hover:text-amber-400
+                " id="searchFilter"
+              >
+                Search
+              </button>
+            </div>
+          </div>
+          <!-- second half -->
+          <div id="tourSection" class="grid grid-cols-3 gap-5">
+
+          </div>
+        </div>
+      </section>
+      <section class="bg-cyan-50 py-20 mt-10">
+    <div class="max-w-3/4 mx-auto">
+
+        <!-- Header -->
+        <div class="flex justify-between items-center w-full mb-10">
+          <div>
+            <p class="text-4xl font-bold">Recent Launched Car</p>
+            <p class="text-xl">The world's leading car brands</p>
+          </div>
+          <div>
+            <button class="p-3  rounded-full border" id="prevBtn"><-</button>
+            <button class="p-3  rounded-full border bg-black text-white" id="nextBtn">-></button>
+          </div>
+          
+        </div>
+        
+        <!-- Slider -->
+        <div class="overflow-hidden">
+
+            <div id="slider" class="flex  gap-4 transition-transform duration-500">
+              
+                <!-- Card 1 -->
+                <!-- Card 2 -->
+                <!-- Card 3 -->
+
+            </div>
+
+        </div>
+        <div class="flex flex-col gap-10 mt-10">
+          <div>
+            <p class="text-4xl font-bold ">Search by Category</p>
+            <p class="text-xl">There has 30+ Brand Category Available</p>
+          </div>
+          <div class="flex justify-between">
+            <button value="lexus" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/lexus.png.svg" alt=""></button>
+            <button value="mercedes" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/mer.png.png" alt=""></button>
+            <button value="buggati" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/bugatti.png.png" alt=""></button>
+            <button value="jaguar" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/jaguar.png.png" alt=""></button>
+            <button value="honda" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/honda.png.png" alt=""></button>
+            <button value="chevrolet" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/chevrolet.png.png" alt=""></button>
+            <button value="acura" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/acura.png.png" alt=""></button>
+            <button value="bmw" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/bmw.png.png" alt=""></button>
+            <button value="toyota" class="p-2 bg-white car-logo rounded-2xl hover:bg-cyan-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"><img src="./src/assets/images/toyota.png.png" alt=""></button>
+          </div>
+        </div>
+
+    </div>
+
+</section>
     </main>
-    <footer></footer>
-    <script src="./src/js/index.js"></script>
+    <footer class="bg-black text-gray-400 pt-14">
+
+    <!-- Container -->
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Newsletter -->
+        <div class="flex flex-col lg:flex-row justify-between items-center gap-8 pb-10 border-b border-gray-800">
+
+            <div>
+                <h2 class="text-4xl font-bold text-white leading-tight">
+                    Subscribe to see secret deals prices <br>
+                    drop the moment you sign up!
+                </h2>
+            </div>
+
+            <div class="flex items-center">
+
+                <div
+                    class="flex items-center bg-transparent border border-gray-700 rounded-full px-5 py-3 w-96">
+
+                    <span class="text-gray-500 mr-3">✉️</span>
+
+                    <input
+                        type="email"
+                        placeholder="Enter your email"
+                        class="bg-transparent outline-none text-white placeholder-gray-500 flex-1">
+
+                </div>
+
+                <button
+                    class="ml-4 bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-8 py-4 rounded-full transition">
+
+                    Subscribe
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Main Footer -->
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 py-14">
+
+            <!-- Logo -->
+
+            <div class="lg:col-span-2">
+
+                <h2 class="text-4xl font-bold text-white mb-6">
+                    🌴 Travila
+                </h2>
+
+                <div class="space-y-4">
+
+                    <p>
+                        📍 4517 Washington Ave. Manchester,<br>
+                        Kentucky 39495
+                    </p>
+
+                    <p>
+                        🕒 Hours: 8:00 - 17:00, Mon - Sat
+                    </p>
+
+                    <p>
+                        ✉️ support@travila.com
+                    </p>
+
+                </div>
+
+                <div class="mt-8">
+
+                    <p class="text-white">
+                        📞 Need help? Call us
+                    </p>
+
+                    <h3 class="text-yellow-400 text-3xl font-bold mt-2">
+                        1-800-222-8888
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <!-- Support -->
+
+            <div>
+
+                <h3 class="text-white text-xl font-semibold mb-6">
+                    Support
+                </h3>
+
+                <ul class="space-y-4">
+
+                    <li><a href="#" class="hover:text-white">Forum Support</a></li>
+
+                    <li><a href="#" class="hover:text-white">Help Center</a></li>
+
+                    <li><a href="#" class="hover:text-white">Live Chat</a></li>
+
+                    <li><a href="#" class="hover:text-white">How it works</a></li>
+
+                    <li><a href="#" class="hover:text-white">Security</a></li>
+
+                    <li><a href="#" class="hover:text-white">Privacy</a></li>
+
+                    <li><a href="#" class="hover:text-white">Charges logs</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Company -->
+
+            <div>
+
+                <h3 class="text-white text-xl font-semibold mb-6">
+                    Company
+                </h3>
+
+                <ul class="space-y-4">
+
+                    <li><a href="#" class="hover:text-white">About Us</a></li>
+
+                    <li><a href="#" class="hover:text-white">Community Blog</a></li>
+
+                    <li><a href="#" class="hover:text-white">Jobs & Careers</a></li>
+
+                    <li><a href="#" class="hover:text-white">Contact Us</a></li>
+
+                    <li><a href="#" class="hover:text-white">Our Awards</a></li>
+
+                    <li><a href="#" class="hover:text-white">Agencies</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Services -->
+
+            <div>
+
+                <h3 class="text-white text-xl font-semibold mb-6">
+                    Services
+                </h3>
+
+                <ul class="space-y-4">
+
+                    <li><a href="#" class="hover:text-white">Tour Guide</a></li>
+
+                    <li><a href="#" class="hover:text-white">Tour Booking</a></li>
+
+                    <li><a href="#" class="hover:text-white">Hotel Booking</a></li>
+
+                    <li><a href="#" class="hover:text-white">Ticket Booking</a></li>
+
+                    <li><a href="#" class="hover:text-white">Rental Services</a></li>
+
+                </ul>
+
+            </div>
+
+            <!-- Legal -->
+
+            <div>
+
+                <h3 class="text-white text-xl font-semibold mb-6">
+                    Legal
+                </h3>
+
+                <ul class="space-y-4">
+
+                    <li><a href="#" class="hover:text-white">Terms of Service</a></li>
+
+                    <li><a href="#" class="hover:text-white">Privacy Policy</a></li>
+
+                    <li><a href="#" class="hover:text-white">Cookies Policy</a></li>
+
+                    <li><a href="#" class="hover:text-white">Data Processing</a></li>
+
+                    <li><a href="#" class="hover:text-white">Data Policy</a></li>
+
+                    <li><a href="#" class="hover:text-white">Refund Policy</a></li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom -->
+
+        <div
+            class="border-t border-gray-800 py-8 flex flex-col md:flex-row justify-between items-center">
+
+            <p>
+                © 2024 Travila Inc. All rights reserved.
+            </p>
+
+            <div class="flex items-center gap-5">
+
+                <span class="text-white font-semibold">
+                    Follow us
+                </span>
+
+                <a href="#" class="hover:text-white">Facebook</a>
+
+                <a href="#" class="hover:text-white">Instagram</a>
+
+                <a href="#" class="hover:text-white">Twitter</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+    <script type="module" src="./src/js/index.js"></script>
   </body>
 </html>
