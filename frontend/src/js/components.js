@@ -94,9 +94,9 @@ export function renderTours(tourSection, tours, filters = {}) {
     if (fDays > tDays || fNights > tNights) return;
     // console.log("how am here");
     if (fRating > tRating) return;
-    console.log("are yr here");
+    // console.log("are yr here");
     if (fPriceFrom > tPrice || tPrice > fPriceTo) return;
-    console.log("i am here");
+    // console.log("i am here");
     tourSection.innerHTML += tourCard(tour);
   });
 }
@@ -112,8 +112,7 @@ function carCard(car) {
       src="${car.image}"
       alt="${car.brand} ${car.model}"
       class="w-full h-full object-cover"
-      loading="lazy"
-  decoding="async"
+      
     />
 
     <div class="absolute top-2 sm:top-3 left-2 sm:left-3 rounded-full px-3 sm:px-4 py-1 bg-white text-amber-400 font-medium text-xs sm:text-sm whitespace-nowrap">
@@ -138,8 +137,7 @@ function carCard(car) {
 
       <div class="flex items-center gap-2 text-xs sm:text-sm truncate">
         <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/location.svg.png" alt=""
-        loading="lazy"
-  decoding="async">
+        >
         ${car.location}
       </div>
     </div>
@@ -147,29 +145,25 @@ function carCard(car) {
     <div class="grid grid-cols-2 w-full p-2 text-gray-400 gap-2 sm:gap-4 text-xs sm:text-sm">
       <div class="flex items-center gap-2 truncate">
         <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/mile.svg.png" alt=""
-        loading="lazy"
-  decoding="async">
+        >
         ${car.mileage}
       </div>
 
       <div class="flex items-center gap-2 truncate">
         <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/automatic.svg.png" alt=""
-        loading="lazy"
-  decoding="async">
+        >
         ${car.transmission}
       </div>
 
       <div class="flex items-center gap-2 truncate">
         <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/fuel.svg.png" alt=""
-        loading="lazy"
-  decoding="async">
+        >
         ${car.fuel}
       </div>
 
       <div class="flex items-center gap-2 truncate">
         <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/seat.svg.png" alt=""
-        loading="lazy"
-  decoding="async">
+        >
         ${car.seats}
       </div>
     </div>
@@ -232,7 +226,7 @@ export function renderCars(carSection, cars, filters = {}) {
     // if (fPriceFrom > tPrice || tPrice > fPriceTo) return;
     // console.log("i am here");
     // if(filters.brand!=cBrand)return;
-    if (filters.brand.size != 0 && !filters.brand.has(car.brand.toLowerCase()))
+    if (filters.brand.size != 0 && !filters.brand.has(cBrand.toLowerCase()))
       return;
     carSection.insertAdjacentHTML("afterbegin", carCard(car));
   });

@@ -140,7 +140,7 @@ childPlusBtn.addEventListener("click", () => {
 });
 
 function changeCount(countSpan, delta) {
-  console.log("hey");
+  // console.log("hey");
   let currentCount = parseInt(countSpan.innerText);
   let newCount = currentCount + delta;
   if (newCount < 0) {
@@ -208,11 +208,11 @@ searchFilter.addEventListener("click", () => {
 //price range event listener
 priceFrom.addEventListener("change", () => {
   tourFilters.priceFrom = parseInt(priceFrom.value);
-  console.log(tourFilters);
+  // console.log(tourFilters);
 });
 priceTo.addEventListener("change", () => {
   tourFilters.priceTo = parseInt(priceTo.value);
-  console.log(tourFilters);
+  // console.log(tourFilters);
 });
 
 //rating event listener for each button
@@ -223,7 +223,7 @@ tourRatings.forEach((tourRating) => {
     // console.log("rati");
     tourFilters.rating = parseInt(tourRating.value);
     ratingBtn.innerHTML = tourRating.innerHTML;
-    console.log(tourFilters);
+    // console.log(tourFilters);
   });
 });
 
@@ -233,25 +233,25 @@ daysMinusBtn.addEventListener("click", () => {
   tourFilters.days = parseInt(daysCount.innerText);
   durationBtn.innerText = `${daysCount.innerText} D & ${nightCount.innerText} N`;
   // console.log(durationBtn.innerText);
-  console.log(tourFilters);
+  // console.log(tourFilters);
 });
 daysPlusBtn.addEventListener("click", () => {
   changeCount(daysCount, 1);
   tourFilters.days = parseInt(daysCount.innerText);
   durationBtn.innerText = `${daysCount.innerText} D & ${nightCount.innerText} N`;
-  console.log(tourFilters);
+  // console.log(tourFilters);
 });
 nightMinusBtn.addEventListener("click", () => {
   changeCount(nightCount, -1);
   tourFilters.nights = parseInt(nightCount.innerText);
   durationBtn.innerText = `${daysCount.innerText} D & ${nightCount.innerText} N`;
-  console.log(tourFilters);
+  // console.log(tourFilters);
 });
 nightPlusBtn.addEventListener("click", () => {
   changeCount(nightCount, 1);
   tourFilters.nights = parseInt(nightCount.innerText);
   durationBtn.innerText = `${daysCount.innerText} D & ${nightCount.innerText} N`;
-  console.log(tourFilters);
+  // console.log(tourFilters);
 });
 
 //category options
@@ -259,7 +259,7 @@ categories.forEach((cat) => {
   cat.addEventListener("click", () => {
     tourFilters.category = cat.value.toLowerCase();
     categoryBtn.innerText = cat.innerText;
-    console.log(tourFilters);
+    // console.log(tourFilters);
   });
 });
 
@@ -268,7 +268,7 @@ let tourSection = document.getElementById("tourSection");
 
 async function getTours() {
   try {
-    console.log("entered");
+    // console.log("entered");
     const response = await fetch("./src/data/tour_cards.json");
     if (!response.ok) {
       throw new Error("Failed to load tours");
@@ -374,6 +374,7 @@ window.addEventListener("resize", () => {
     }
     updateSlider();
     handleNavBtn();
+    moveIndicator(tabs[0]);
   }, 150);
 });
 

@@ -2,7 +2,7 @@
     {
         "id":1,
         "category":"adventure",
-        "bg_image":"./src/assets/images/Hero bg.avif",
+        "bg_image":"./src/assets/images/journey3.avif",
         "fav":0,
         "title":"California Sunset/Twilight Adventure",
         "days":2,
@@ -14,7 +14,7 @@
     {
         "id":2,
         "category":"beach",
-        "bg_image":"./src/assets/images/Hero bg.avif",
+        "bg_image":"./src/assets/images/journey3.avif",
         "fav":0,
         "title":"California Sunset/Twilight Beach",
         "days":2,
@@ -26,7 +26,7 @@
     {
         "id":3,
         "category":"cruise",
-        "bg_image":"./src/assets/images/Hero bg.avif",
+        "bg_image":"./src/assets/images/journey3.avif",
         "fav":0,
         "title":"California Sunset/Twilight Boat Cruise",
         "days":2,
@@ -38,7 +38,7 @@
     {
         "id":4,
         "category":"fd",
-        "bg_image":"./src/assets/images/Hero bg.avif",
+        "bg_image":"./src/assets/images/journey3.avif",
         "fav":0,
         "title":"California Sunset/Twilight Foods & Drinks",
         "days":2,
