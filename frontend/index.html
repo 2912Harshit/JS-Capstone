@@ -293,7 +293,8 @@ decoding="async"> -->
             <img src="./src/assets/images/light.svg.png" alt="Light" />
           </button>
           <button
-            class="hidden lg:inline-block px-4 py-1 font-semibold bg-gray-300 rounded-4xl"
+            id="signupBtn"
+            class="hidden lg:inline-block px-4 py-1 font-semibold bg-gray-300 rounded-4xl hover:bg-cyan-400"
           >
             Sign In
           </button>
@@ -378,6 +379,7 @@ decoding="async"> -->
         </div>
         <div class="px-4 pb-4">
           <button
+            id="signupBtn"
             class="w-full px-4 py-3 font-semibold bg-gray-300 rounded-full"
           >
             Sign In
@@ -385,6 +387,174 @@ decoding="async"> -->
         </div>
       </div>
     </header>
+    <div id="bookingOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-[100] p-4">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative">
+    
+    <!-- FORM VIEW -->
+    <div id="bookingFormView">
+      
+      <!-- Header with image -->
+      <div class="relative h-40 rounded-t-2xl overflow-hidden">
+        <img id="modalImage" src="" class="w-full h-full object-cover" alt="">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+        <button id="closeModalBtn" class="absolute top-4 right-4 bg-white/90 hover:bg-white text-gray-700 w-8 h-8 rounded-full flex items-center justify-center transition">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div class="absolute bottom-4 left-6 text-white">
+          <span id="modalBadge" class="text-xs font-semibold px-2 py-1 rounded-full bg-white/20"></span>
+          <h2 id="modalTitle" class="text-2xl font-bold mt-1"></h2>
+        </div>
+      </div>
+
+      <form id="bookingForm" class="p-6 space-y-5">
+
+        <!-- Dynamic Info Bar -->
+        <div id="infoBar" class="flex flex-wrap gap-4 bg-gray-50 rounded-xl p-4 text-sm text-gray-600"></div>
+
+        <!-- Personal Info -->
+        <div>
+          <h3 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-user text-blue-600"></i> Your Information
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+              <input type="text" id="fullName" required
+                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="John Doe">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+              <input type="email" id="email" required
+                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="john@example.com">
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+              <input type="tel" id="phone" required
+                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="+1 234 567 8900">
+            </div>
+            <div id="guestsWrapper" class="hidden">
+              <label class="block text-sm font-medium text-gray-700 mb-1">Adults / Children</label>
+              <div class="flex gap-2">
+                <input type="number" id="adults" min="1" value="1"
+                  class="w-1/2 border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input type="number" id="children" min="0" value="0"
+                  class="w-1/2 border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Type Specific Fields -->
+        <div id="typeSpecificFields"></div>
+
+        <!-- Special Requests -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Special Requests (optional)</label>
+          <textarea id="requests" rows="3"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+            placeholder="Any special requirements..."></textarea>
+        </div>
+
+        <!-- Price Summary -->
+        <div class="bg-blue-50 rounded-xl p-4 flex justify-between items-center">
+          <span class="text-gray-700 font-medium">Total Estimated Price</span>
+          <span id="totalPrice" class="text-2xl font-bold text-blue-700">$0</span>
+        </div>
+
+        <button type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold text-lg transition flex items-center justify-center gap-2">
+          <i class="fa-solid fa-circle-check"></i> Confirm Booking
+        </button>
+      </form>
+    </div>
+
+    <!-- SUCCESS VIEW -->
+    <div id="successView" class="hidden p-10 text-center">
+      <div class="flex justify-center mb-5">
+        <div class="bg-green-100 rounded-full p-5 animate-bounce">
+          <!-- <i class="fa-solid fa-check text-4xl text-green-600"></i> -->
+          ✔
+        </div>
+      </div>
+      <h2 class="text-2xl font-bold text-gray-800 mb-2">Thank You, <span id="successName"></span>! 🎉</h2>
+      <p class="text-gray-600 mb-1">Your booking for</p>
+      <p class="text-lg font-semibold text-blue-600 mb-4" id="successItem"></p>
+      
+      <div class="bg-gray-50 rounded-xl p-4 mb-4 text-left max-w-sm mx-auto space-y-2">
+        <p class="text-sm text-gray-600 flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-blue-500"></i> 
+          Confirmation sent to <span id="successEmail" class="font-medium text-gray-800"></span>
+        </p>
+        <p class="text-sm text-gray-600 flex items-center gap-2">
+          <i class="fa-solid fa-hashtag text-blue-500"></i>
+          Booking ID: <span id="bookingId" class="font-medium text-gray-800"></span>
+        </p>
+      </div>
+
+      <p class="text-gray-500 text-sm mb-6">We've sent a confirmation email with all the details. Our team will contact you shortly.</p>
+      
+      <button id="closeSuccessBtn"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition">
+        Done
+      </button>
+    </div>
+
+  </div>
+</div>
+    <!-- Modal Overlay -->
+<div id="modalOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
+  
+  <!-- Sign Up Form Card -->
+  <div id="signupForm" class="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative">
+    <button id="closeBtn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl leading-none">
+      &times;
+    </button>
+    
+    <h2 class="text-2xl font-bold text-gray-800 mb-6">Create Account</h2>
+    
+    <form id="signupFormElement" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+        <input type="text" required 
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input type="email" required 
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <div>
+        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+        <input type="password" required 
+          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+      </div>
+      
+      <button type="submit" 
+        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-semibold mt-2 transition">
+        Sign In
+      </button>
+    </form>
+  </div>
+
+  <!-- Success Message Card (hidden initially) -->
+  <div id="successMessage" class="hidden bg-white rounded-xl shadow-2xl w-full max-w-md p-8 text-center">
+    <div class="flex justify-center mb-4">
+      <div class="bg-green-100 rounded-full p-3">
+        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+        </svg>
+      </div>
+    </div>
+    <h2 class="text-xl font-bold text-gray-800 mb-2">You're signed up! 🎉</h2>
+    <p class="text-gray-600">Thanks for joining us. A confirmation has been noted.</p>
+  </div>
+
+</div>
     <main class="w-full">
       <section
         class="relative bg-center bg-cover pt-10 pb-10 sm:pt-14 sm:pb-14 lg:pt-20 lg:pb-40 px-4 sm:px-6 lg:px-10"
@@ -471,30 +641,35 @@ decoding="async"> -->
                 ></div>
 
                 <button
+                  value="tours"
                   class="text-amber-300 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-medium z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Tours
                 </button>
 
                 <button
+                 value="hotels"
                   class="px-3 sm:px-5 py-2 sm:py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Hotels
                 </button>
 
                 <button
+                value="tickets"
                   class="px-3 sm:px-5 py-2 sm:py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Tickets
                 </button>
 
                 <button
+                value="rental"
                   class="px-3 sm:px-5 py-2 sm:py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Rental
                 </button>
 
                 <button
+                value="activities"
                   class="px-3 sm:px-5 py-2 sm:py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Activities
@@ -553,16 +728,19 @@ decoding="async"> -->
                   <!-- Adults -->
                   <div class="grid gap-2 text-lg">
                     <button
+                    value="new york"
                       class="hover:bg-black hover:text-white rounded-4xl location-option bg-black text-white"
                     >
                       New York
                     </button>
                     <button
+                     value="california"
                       class="hover:bg-black hover:text-white rounded-4xl location-option"
                     >
                       California
                     </button>
                     <button
+                    value="texas"
                       class="hover:bg-black hover:text-white rounded-4xl location-option"
                     >
                       Texas
@@ -578,6 +756,7 @@ decoding="async"> -->
                   <p class="text-xs text-gray-400">Check In</p>
                   <input
                     type="date"
+                    id="check-in-input"
                     class="w-full bg-transparent outline-none font-semibold cursor-pointer"
                   />
                 </label>
@@ -590,6 +769,7 @@ decoding="async"> -->
                   <p class="text-xs text-gray-400">Check Out</p>
                   <input
                     type="date"
+                    id="check-out-input"
                     class="w-full bg-transparent outline-none font-semibold cursor-pointer"
                   />
                 </label>
@@ -693,6 +873,7 @@ decoding="async"> -->
 
               <div class="w-full lg:w-auto px-5 pt-2 pb-1 lg:pt-0 lg:pb-0">
                 <button
+                  id="search-all"
                   class="w-full lg:w-auto justify-center hover:text-amber-300 bg-black text-white px-8 py-3.5 sm:py-4 rounded-full flex items-center gap-2 hover:bg-gray-800 transition"
                 >
                   <img
@@ -707,6 +888,12 @@ decoding="async"> -->
             </div>
           </div>
         </section>
+      </section>
+      <section class="flex items-center justify-center">
+        <div
+            id="all-section"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-40"
+          ></div>
       </section>
       <!-- featured tours -->
       <section

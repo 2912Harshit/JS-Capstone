@@ -1,0 +1,204 @@
+[
+  {
+    "id": 1,
+    "type": "tours",
+    "location": "new york",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 299,
+    "rating": 4.8,
+    "reviews": 324,
+    "checkIn": "2026-08-15",
+    "checkOut": "2026-08-20",
+    "guests": {
+      "adults": 2,
+      "children": 2,
+      "rooms": 1
+    }
+  },
+  {
+    "id": 11,
+    "type": "tours",
+    "location": "new york",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 199,
+    "rating": 3.8,
+    "reviews": 624,
+    "checkIn": "2026-08-15",
+    "checkOut": "2026-08-20",
+    "guests": {
+      "adults": 2,
+      "children": 2
+      
+    }
+  },
+  {
+    "id": 12,
+    "type": "tours",
+    "location": "new york",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 549,
+    "rating": 4,
+    "reviews": 324,
+    "checkIn": "2026-08-15",
+    "checkOut": "2026-08-20",
+    "guests": {
+      "adults": 2,
+      "children": 2,
+      "rooms": 1
+    }
+  },
+  {
+    "id": 13,
+    "type": "tours",
+    "location": "new york",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 159,
+    "rating": 4.5,
+    "reviews": 100,
+    "checkIn": "2026-08-15",
+    "checkOut": "2026-08-20",
+    "guests": {
+      "adults": 2,
+      "children": 2,
+      "rooms": 1
+    }
+  },
+  {
+    "id": 2,
+    "type": "tours",
+    "location": "california",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 349,
+    "rating": 4.9,
+    "reviews": 512,
+    "checkIn": "2026-09-10",
+    "checkOut": "2026-09-15",
+    "guests": {
+      "adults": 2,
+      "children": 0,
+      "rooms": 1
+    }
+  },
+  {
+    "id": 3,
+    "type": "hotels",
+    "location": "texas",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 199,
+    "rating": 4.7,
+    "reviews": 286,
+    "checkIn": "2026-10-05",
+    "checkOut": "2026-10-10",
+    "guests": {
+      "adults": 3,
+      "children": 1,
+      "rooms": 2
+    }
+  },
+  {
+    "id": 4,
+    "type": "hotels",
+    "location": "texas",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 229,
+    "rating": 4.6,
+    "reviews": 193,
+    "checkIn": "2026-11-01",
+    "checkOut": "2026-11-06",
+    "guests": {
+      "adults": 2,
+      "children": 0,
+      "rooms": 1
+    }
+  },
+  {
+    "id": 5,
+    "type": "tickets",
+    "location": "california",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 89,
+    "rating": 4.9,
+    "reviews": 741,
+    "checkIn": "2026-09-25",
+    "checkOut": "2026-09-25",
+    "guests": {
+      "adults": 1,
+      "children": 0
+    }
+  },
+  {
+    "id": 6,
+    "type": "tickets",
+    "location": "california",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 75,
+    "rating": 4.8,
+    "reviews": 468,
+    "checkIn": "2026-07-12",
+    "checkOut": "2026-07-12",
+    "guests": {
+      "adults": 2,
+      "children": 1
+    }
+  },
+  {
+    "id": 7,
+    "type": "rental",
+    "location": "texas",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 149,
+    "rating": 4.7,
+    "reviews": 221,
+    "checkIn": "2026-12-01",
+    "checkOut": "2026-12-07",
+    "guests": {
+      "adults": 2,
+      "children": 0
+    }
+  },
+  {
+    "id": 8,
+    "type": "rental",
+    "location": "new york",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 169,
+    "rating": 4.8,
+    "reviews": 175,
+    "checkIn": "2026-08-18",
+    "checkOut": "2026-08-25",
+    "guests": {
+      "adults": 4,
+      "children": 2
+    }
+  },
+  {
+    "id": 9,
+    "type": "activities",
+    "location": "taxes",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 119,
+    "rating": 4.9,
+    "reviews": 604,
+    "checkIn": "2026-11-15",
+    "checkOut": "2026-11-15",
+    "guests": {
+      "adults": 2,
+      "children": 0
+    }
+  },
+  {
+    "id": 10,
+    "type": "activities",
+    "location": "california",
+    "image": "./src/assets/images/journey3.avif",
+    "price": 99,
+    "rating": 4.7,
+    "reviews": 347,
+    "checkIn": "2026-12-24",
+    "checkOut": "2026-12-24",
+    "guests": {
+      "adults": 5,
+      "children": 2
+    }
+  }
+]
