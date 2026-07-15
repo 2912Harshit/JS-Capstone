@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "title": "California Sunset/Twilight Boat Cruise",
+    "image": "./src/assets/images/journey3.avif",
+    "rating": 4.96,
+    "reviews": 672,
+    "location": "Manchester, England",
+    "price": 48.25,
+    "stars": 5,
+    "favorite": false
+  },
+  {
+    "id": 2,
+    "title": "NYC: Food Tastings and Culture Tour",
+    "image": "./src/assets/images/last.avif",
+    "rating": 4.96,
+    "reviews": 672,
+    "location": "Manchester, England",
+    "price": 17.32,
+    "stars": 5,
+    "favorite": false
+  },
+  {
+    "id": 3,
+    "title": "Grand Canyon Horseshoe Bend 2 Days",
+    "image": "./src/assets/images/last-2.avif",
+    "rating": 4.98,
+    "reviews": 845,
+    "location": "Arizona, USA",
+    "price": 15.63,
+    "stars": 5,
+    "favorite": false
+  },
+  {
+    "id": 4,
+    "title": "Santorini Luxury Beach Resort",
+    "image": "./src/assets/images/journey3.avif",
+    "rating": 4.94,
+    "reviews": 512,
+    "location": "Santorini, Greece",
+    "price": 59.99,
+    "stars": 5,
+    "favorite": false
+  },
+  {
+    "id": 5,
+    "title": "Swiss Alps Mountain Retreat",
+    "image": "./src/assets/images/last.avif",
+    "rating": 4.97,
+    "reviews": 934,
+    "location": "Zermatt, Switzerland",
+    "price": 72.50,
+    "stars": 5,
+    "favorite": false
+  },
+  {
+    "id": 6,
+    "title": "Dubai Desert Luxury Camp",
+    "image": "./src/assets/images/last-2.avif",
+    "rating": 4.91,
+    "reviews": 478,
+    "location": "Dubai, UAE",
+    "price": 35.75,
+    "stars": 5,
+    "favorite": false
+  },
+  {
+    "id": 7,
+    "title": "Bali Ocean View Villas",
+    "image": "./src/assets/images/journey3.avif",
+    "rating": 4.99,
+    "reviews": 1204,
+    "location": "Bali, Indonesia",
+    "price": 82.99,
+    "stars": 5,
+    "favorite": false
+  },
+  {
+    "id": 8,
+    "title": "Paris City Lights Experience",
+    "image": "./src/assets/images/last.avif",
+    "rating": 4.95,
+    "reviews": 689,
+    "location": "Paris, France",
+    "price": 44.20,
+    "stars": 5,
+    "favorite": false
+  }
+]

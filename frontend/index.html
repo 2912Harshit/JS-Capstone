@@ -7,18 +7,30 @@
       name="description"
       content="Discover adventure tours, beach vacations, luxury cruises, and food experiences. Book your next unforgettable trip with TravelGo."
     />
-    <link rel="stylesheet" href="./dist/output.css" />
     <title>Travila</title>
     <link
-      rel="icon"
+    rel="icon"
       type="image/png"
       href="./src/assets/images/Clip path group.png"
     />
+    <link rel="manifest" href="./src/manifest.json">
+
+    <meta name="theme-color" content="#FACC15">
+    <meta name="theme-color" content="#FACC15">
+    <link rel="apple-touch-icon" href="./src/assets/icons/icon-192.png">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<meta
+name="apple-mobile-web-app-status-bar-style"
+content="black-translucent">
     <!-- <link
     rel="preload"
     as="image"
     href="./src/assets/images/Hero bg.avif"
   > -->
+  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+<link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body>
     <header class="relative z-50 sticky top-0 bg-white shadow-sm">
@@ -54,15 +66,15 @@ decoding="async"> -->
             class="h-6 sm:h-7 lg:h-8"
             src="./src/assets/images/logo.svg fill.png"
             alt="Logo"
-            loading="lazy"
-            decoding="async"
+            
+            
         /></a>
         <div class="z-10 hidden lg:block">
           <div>
             <ul class="flex gap-6 xl:gap-10">
               <!-- Home Dropdown -->
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Home </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Home </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -83,7 +95,7 @@ decoding="async"> -->
 
               <!-- Contact Dropdown -->
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Tours </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Tours </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -103,7 +115,7 @@ decoding="async"> -->
               </li>
               <!-- tours dropdown -->
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Destination </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Destination </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -122,7 +134,7 @@ decoding="async"> -->
                 </div>
               </li>
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Hotel </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Hotel </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -141,7 +153,7 @@ decoding="async"> -->
                 </div>
               </li>
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Activities </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Activities </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -160,7 +172,7 @@ decoding="async"> -->
                 </div>
               </li>
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Rental </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Rental </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -179,7 +191,7 @@ decoding="async"> -->
                 </div>
               </li>
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Tickets </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Tickets </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -198,7 +210,7 @@ decoding="async"> -->
                 </div>
               </li>
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Pages </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Pages </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -217,7 +229,7 @@ decoding="async"> -->
                 </div>
               </li>
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Blog </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Blog </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -236,7 +248,7 @@ decoding="async"> -->
                 </div>
               </li>
               <li class="relative group">
-                <a href="#" class="py-2 hover:text-blue-600"> Contact </a>
+                <a href="#" class="pb-5 hover:text-blue-600"> Contact </a>
 
                 <div
                   class="absolute left-0 mt-2 w-48 rounded-lg bg-white shadow-lg border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition duration-200"
@@ -387,61 +399,111 @@ decoding="async"> -->
         </div>
       </div>
     </header>
-    <div id="bookingOverlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-[100] p-4">
-  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto relative">
-    
+    <div
+  id="bookingOverlay"
+  class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-[100] p-0 sm:p-4"
+>
+  <div
+    class="bg-white rounded-none sm:rounded-2xl shadow-2xl w-full h-full sm:h-auto sm:max-w-2xl sm:max-h-[90vh] overflow-y-auto relative"
+  >
     <!-- FORM VIEW -->
     <div id="bookingFormView">
-      
       <!-- Header with image -->
-      <div class="relative h-40 rounded-t-2xl overflow-hidden">
-        <img id="modalImage" src="" class="w-full h-full object-cover" alt="">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
-        <button id="closeModalBtn" class="absolute top-4 right-4 bg-white/90 hover:bg-white text-gray-700 w-8 h-8 rounded-full flex items-center justify-center transition">
-          <i class="fa-solid fa-xmark"></i>
+      <div class="relative h-32 sm:h-40 md:h-48 rounded-none sm:rounded-t-2xl overflow-hidden">
+        <img
+          id="modalImage"
+          src=""
+          class="w-full h-full object-cover"
+          alt=""
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"
+        ></div>
+        <button
+          id="closeModalBtn"
+          class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-white/90 hover:bg-white text-gray-700 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center transition"
+        >
+          <img src="./src/assets/images/closecircularbutton_79562.ico" class="w-4 h-4 sm:w-5 sm:h-5" alt="Close" />
         </button>
-        <div class="absolute bottom-4 left-6 text-white">
-          <span id="modalBadge" class="text-xs font-semibold px-2 py-1 rounded-full bg-white/20"></span>
-          <h2 id="modalTitle" class="text-2xl font-bold mt-1"></h2>
+        <div class="absolute bottom-3 left-4 sm:bottom-4 sm:left-6 right-4 text-white">
+          <span
+            id="modalBadge"
+            class="text-xs font-semibold px-2 py-1 rounded-full bg-white/20 inline-block"
+          ></span>
+          <h2 id="modalTitle" class="text-lg sm:text-xl md:text-2xl font-bold mt-1 leading-tight"></h2>
         </div>
       </div>
 
-      <form id="bookingForm" class="p-6 space-y-5">
-
+      <form id="bookingForm" class="p-4 sm:p-6 space-y-4 sm:space-y-5">
         <!-- Dynamic Info Bar -->
-        <div id="infoBar" class="flex flex-wrap gap-4 bg-gray-50 rounded-xl p-4 text-sm text-gray-600"></div>
+        <div
+          id="infoBar"
+          class="flex flex-wrap gap-2 sm:gap-4 bg-gray-50 rounded-xl p-3 sm:p-4 text-xs sm:text-sm text-gray-600"
+        ></div>
 
         <!-- Personal Info -->
         <div>
-          <h3 class="font-semibold text-gray-800 mb-3 flex items-center gap-2">
+          <h3
+            class="font-semibold text-gray-800 mb-3 flex items-center gap-2 text-sm sm:text-base"
+          >
             <i class="fa-solid fa-user text-blue-600"></i> Your Information
           </h3>
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-              <input type="text" id="fullName" required
-                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="John Doe">
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Full Name</label
+              >
+              <input
+                type="text"
+                id="fullName"
+                required
+                class="w-full border border-gray-300 rounded-lg px-3.5 sm:px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="John Doe"
+              />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-              <input type="email" id="email" required
-                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="john@example.com">
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Email</label
+              >
+              <input
+                type="email"
+                id="email"
+                required
+                class="w-full border border-gray-300 rounded-lg px-3.5 sm:px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="john@example.com"
+              />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-              <input type="tel" id="phone" required
-                class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="+1 234 567 8900">
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Phone Number</label
+              >
+              <input
+                type="tel"
+                id="phone"
+                required
+                class="w-full border border-gray-300 rounded-lg px-3.5 sm:px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                placeholder="+1 234 567 8900"
+              />
             </div>
             <div id="guestsWrapper" class="hidden">
-              <label class="block text-sm font-medium text-gray-700 mb-1">Adults / Children</label>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Adults / Children</label
+              >
               <div class="flex gap-2">
-                <input type="number" id="adults" min="1" value="1"
-                  class="w-1/2 border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                <input type="number" id="children" min="0" value="0"
-                  class="w-1/2 border border-gray-300 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <input
+                  type="number"
+                  id="adults"
+                  min="1"
+                  value="1"
+                  class="w-1/2 border border-gray-300 rounded-lg px-3 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <input
+                  type="number"
+                  id="children"
+                  min="0"
+                  value="0"
+                  class="w-1/2 border border-gray-300 rounded-lg px-3 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
               </div>
             </div>
           </div>
@@ -452,109 +514,175 @@ decoding="async"> -->
 
         <!-- Special Requests -->
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Special Requests (optional)</label>
-          <textarea id="requests" rows="3"
-            class="w-full border border-gray-300 rounded-lg px-4 py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
-            placeholder="Any special requirements..."></textarea>
+          <label class="block text-sm font-medium text-gray-700 mb-1"
+            >Special Requests (optional)</label
+          >
+          <textarea
+            id="requests"
+            rows="3"
+            class="w-full border border-gray-300 rounded-lg px-3.5 sm:px-4 py-2.5 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+            placeholder="Any special requirements..."
+          ></textarea>
         </div>
 
         <!-- Price Summary -->
-        <div class="bg-blue-50 rounded-xl p-4 flex justify-between items-center">
-          <span class="text-gray-700 font-medium">Total Estimated Price</span>
-          <span id="totalPrice" class="text-2xl font-bold text-blue-700">$0</span>
+        <div
+          class="bg-blue-50 rounded-xl p-3.5 sm:p-4 flex flex-wrap justify-between items-center gap-2"
+        >
+          <span class="text-gray-700 font-medium text-sm sm:text-base"
+            >Total Estimated Price</span
+          >
+          <span id="totalPrice" class="text-xl sm:text-2xl font-bold text-blue-700"
+            >$0</span
+          >
         </div>
 
-        <button type="submit"
-          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold text-lg transition flex items-center justify-center gap-2">
+        <button
+          type="submit"
+          class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold text-base sm:text-lg transition flex items-center justify-center gap-2"
+        >
           <i class="fa-solid fa-circle-check"></i> Confirm Booking
         </button>
       </form>
     </div>
 
     <!-- SUCCESS VIEW -->
-    <div id="successView" class="hidden p-10 text-center">
-      <div class="flex justify-center mb-5">
-        <div class="bg-green-100 rounded-full p-5 animate-bounce">
-          <!-- <i class="fa-solid fa-check text-4xl text-green-600"></i> -->
-          ✔
+    <div id="successView" class="hidden p-6 sm:p-10 text-center">
+      <div class="flex justify-center mb-4 sm:mb-5">
+        <div class="bg-green-100 rounded-full p-4 sm:p-5 animate-bounce">
+          <span class="text-3xl sm:text-4xl text-green-600">✔</span>
         </div>
       </div>
-      <h2 class="text-2xl font-bold text-gray-800 mb-2">Thank You, <span id="successName"></span>! 🎉</h2>
-      <p class="text-gray-600 mb-1">Your booking for</p>
-      <p class="text-lg font-semibold text-blue-600 mb-4" id="successItem"></p>
-      
-      <div class="bg-gray-50 rounded-xl p-4 mb-4 text-left max-w-sm mx-auto space-y-2">
-        <p class="text-sm text-gray-600 flex items-center gap-2">
-          <i class="fa-solid fa-envelope text-blue-500"></i> 
-          Confirmation sent to <span id="successEmail" class="font-medium text-gray-800"></span>
+      <h2 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2">
+        Thank You, <span id="successName"></span>! 🎉
+      </h2>
+      <p class="text-gray-600 mb-1 text-sm sm:text-base">Your booking for</p>
+      <p
+        class="text-base sm:text-lg font-semibold text-blue-600 mb-4"
+        id="successItem"
+      ></p>
+
+      <div
+        class="bg-gray-50 rounded-xl p-4 mb-4 text-left max-w-sm mx-auto space-y-2"
+      >
+        <p class="text-xs sm:text-sm text-gray-600 flex items-center gap-2">
+          <i class="fa-solid fa-envelope text-blue-500"></i>
+          Confirmation sent to
+          <span id="successEmail" class="font-medium text-gray-800 break-all"></span>
         </p>
-        <p class="text-sm text-gray-600 flex items-center gap-2">
+        <p class="text-xs sm:text-sm text-gray-600 flex items-center gap-2">
           <i class="fa-solid fa-hashtag text-blue-500"></i>
-          Booking ID: <span id="bookingId" class="font-medium text-gray-800"></span>
+          Booking ID:
+          <span id="bookingId" class="font-medium text-gray-800"></span>
         </p>
       </div>
 
-      <p class="text-gray-500 text-sm mb-6">We've sent a confirmation email with all the details. Our team will contact you shortly.</p>
-      
-      <button id="closeSuccessBtn"
-        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition">
+      <p class="text-gray-500 text-xs sm:text-sm mb-6">
+        We've sent a confirmation email with all the details. Our team will
+        contact you shortly.
+      </p>
+
+      <button
+        id="closeSuccessBtn"
+        class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition w-full sm:w-auto"
+      >
         Done
       </button>
     </div>
-
   </div>
 </div>
     <!-- Modal Overlay -->
-<div id="modalOverlay" class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50">
-  
-  <!-- Sign Up Form Card -->
-  <div id="signupForm" class="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative">
-    <button id="closeBtn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl leading-none">
-      &times;
-    </button>
-    
-    <h2 class="text-2xl font-bold text-gray-800 mb-6">Create Account</h2>
-    
-    <form id="signupFormElement" class="space-y-4">
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-        <input type="text" required 
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
-      
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-        <input type="email" required 
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
-      
-      <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-        <input type="password" required 
-          class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-      </div>
-      
-      <button type="submit" 
-        class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-semibold mt-2 transition">
-        Sign In
-      </button>
-    </form>
-  </div>
+    <div
+      id="modalOverlay"
+      class="fixed inset-0 bg-black/50 backdrop-blur-sm hidden items-center justify-center z-50"
+    >
+      <!-- Sign Up Form Card -->
+      <div
+        id="signupForm"
+        class="bg-white rounded-xl shadow-2xl w-full max-w-md p-8 relative"
+      >
+        <button
+          id="closeBtn"
+          class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl leading-none"
+        >
+          &times;
+        </button>
 
-  <!-- Success Message Card (hidden initially) -->
-  <div id="successMessage" class="hidden bg-white rounded-xl shadow-2xl w-full max-w-md p-8 text-center">
-    <div class="flex justify-center mb-4">
-      <div class="bg-green-100 rounded-full p-3">
-        <svg class="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-        </svg>
+        <h2 class="text-2xl font-bold text-gray-800 mb-6">Create Account</h2>
+
+        <form id="signupFormElement" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Email</label
+            >
+            <input
+              type="email"
+              required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1"
+              >Password</label
+            >
+            <input
+              type="password"
+              required
+              class="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2.5 rounded-lg font-semibold mt-2 transition"
+          >
+            Sign In
+          </button>
+        </form>
+      </div>
+
+      <!-- Success Message Card (hidden initially) -->
+      <div
+        id="successMessage"
+        class="hidden bg-white rounded-xl shadow-2xl w-full max-w-md p-8 text-center"
+      >
+        <div class="flex justify-center mb-4">
+          <div class="bg-green-100 rounded-full p-3">
+            <svg
+              class="w-10 h-10 text-green-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+          </div>
+        </div>
+        <h2 class="text-xl font-bold text-gray-800 mb-2">
+          You're signed up! 🎉
+        </h2>
+        <p class="text-gray-600">
+          Thanks for joining us. A confirmation has been noted.
+        </p>
       </div>
     </div>
-    <h2 class="text-xl font-bold text-gray-800 mb-2">You're signed up! 🎉</h2>
-    <p class="text-gray-600">Thanks for joining us. A confirmation has been noted.</p>
-  </div>
-
-</div>
     <main class="w-full">
       <section
         class="relative bg-center bg-cover pt-10 pb-10 sm:pt-14 sm:pb-14 lg:pt-20 lg:pb-40 px-4 sm:px-6 lg:px-10"
@@ -648,28 +776,28 @@ decoding="async"> -->
                 </button>
 
                 <button
-                 value="hotels"
+                  value="hotels"
                   class="px-3 sm:px-5 py-2 sm:py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Hotels
                 </button>
 
                 <button
-                value="tickets"
+                  value="tickets"
                   class="px-3 sm:px-5 py-2 sm:py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Tickets
                 </button>
 
                 <button
-                value="rental"
+                  value="rental"
                   class="px-3 sm:px-5 py-2 sm:py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Rental
                 </button>
 
                 <button
-                value="activities"
+                  value="activities"
                   class="px-3 sm:px-5 py-2 sm:py-3 rounded-full text-gray-500 transition z-10 tab hover:text-amber-300 whitespace-nowrap text-xs sm:text-base"
                 >
                   Activities
@@ -728,19 +856,19 @@ decoding="async"> -->
                   <!-- Adults -->
                   <div class="grid gap-2 text-lg">
                     <button
-                    value="new york"
+                      value="new york"
                       class="hover:bg-black hover:text-white rounded-4xl location-option bg-black text-white"
                     >
                       New York
                     </button>
                     <button
-                     value="california"
+                      value="california"
                       class="hover:bg-black hover:text-white rounded-4xl location-option"
                     >
                       California
                     </button>
                     <button
-                    value="texas"
+                      value="texas"
                       class="hover:bg-black hover:text-white rounded-4xl location-option"
                     >
                       Texas
@@ -891,9 +1019,9 @@ decoding="async"> -->
       </section>
       <section class="flex items-center justify-center">
         <div
-            id="all-section"
-            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-40"
-          ></div>
+          id="all-section"
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 pt-40"
+        ></div>
       </section>
       <!-- featured tours -->
       <section
@@ -921,7 +1049,7 @@ decoding="async"> -->
                   class="flex flex-col items-center gap-2 relative group pb-6"
                 >
                   <div
-                    class="rounded-4xl p-3 text-lg flex items-center gap-2 border"
+                    class="rounded-4xl p-3 text-lg flex items-center gap-2 bg-gray-300"
                     id="category-div"
                   >
                     <button id="category-btn" class="w-20">Categories</button>
@@ -933,7 +1061,7 @@ decoding="async"> -->
                   </div>
                   <div
                     id="category-menu"
-                    class="absolute left-0 mt-16 w-48 max-w-[90vw] rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col gap-2 z-20"
+                    class="absolute mt-16 w-48 max-w-[90vw] rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col gap-2 z-20"
                   >
                     <button
                       value="all"
@@ -977,7 +1105,7 @@ decoding="async"> -->
                   class="flex flex-col items-center gap-2 relative group pb-6"
                 >
                   <div
-                    class="border rounded-4xl p-3 text-lg flex items-center gap-2"
+                    class="bg-gray-300 rounded-4xl p-3 text-lg flex items-center gap-2"
                   >
                     <button id="duration-btn">Duration</button>
                     <img
@@ -987,7 +1115,7 @@ decoding="async"> -->
                     />
                   </div>
                   <div
-                    class="absolute w-64 max-w-[90vw] left-0 mt-16 rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col p-5 z-20"
+                    class="absolute w-64 max-w-[90vw]  mt-16 rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col p-5 z-20"
                   >
                     <!-- Days -->
 
@@ -1051,7 +1179,7 @@ decoding="async"> -->
                   class="flex flex-col items-center gap-2 relative group pb-6"
                 >
                   <div
-                    class="border rounded-4xl p-3 text-lg flex items-center gap-2"
+                    class="bg-gray-300 rounded-4xl p-3 text-lg flex items-center gap-2"
                   >
                     <div id="rating-btn" class="transition duration-1000">
                       Rating
@@ -1064,7 +1192,7 @@ decoding="async"> -->
                   </div>
 
                   <div
-                    class="absolute left-0 mt-16 max-w-[90vw] rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col gap-2 items-start z-20"
+                    class="absolute mt-16 max-w-[90vw] rounded-lg bg-white shadow-lg opacity-0 invisible group-hover:visible group-hover:opacity-100 transition duration-200 flex flex-col gap-2 items-start z-20"
                   >
                     <button
                       value="1"
@@ -1103,7 +1231,7 @@ decoding="async"> -->
                   class="flex flex-col items-center gap-2 relative group pb-6"
                 >
                   <div
-                    class="border rounded-4xl p-3 text-lg flex items-center gap-2"
+                    class="bg-gray-300 rounded-4xl p-3 text-lg flex items-center gap-2"
                   >
                     <button id="price-range-btn">Price Range</button>
                     <img
@@ -1152,12 +1280,12 @@ decoding="async"> -->
                   </div>
                 </li>
               </ul>
-              <button
-                class="lg:self-end text-center shadow-2xl w-full sm:w-40 lg:w-1/4 rounded-4xl bg-black text-white p-3 hover:text-amber-400"
+              <!-- <button
+                class=" lg:self-end text-center shadow-2xl w-full sm:w-40 lg:w-1/4 rounded-4xl bg-black text-white p-3 hover:text-amber-400"
                 id="searchFilter"
               >
                 Search
-              </button>
+              </button> -->
             </div>
           </div>
           <!-- second half -->
@@ -1187,232 +1315,21 @@ decoding="async"> -->
             </div>
 
             <button
+              id="top-category-tours-vm"
+              data-type="0"
               class="bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition flex items-center gap-2 w-fit"
             >
-              View More
+              <span>View More</span>
               <span>→</span>
             </button>
           </div>
 
           <!-- Categories -->
           <div
+            id="top-category-tour-section"
             class="grid grid-cols-1 sm:grid-cols-4 lg:grid-cols-4 gap-6 mt-10"
           >
             <!-- Card -->
-            <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
-            >
-              <img
-                src="./src/assets/images/boat.png.avif"
-                alt="Moutain Image"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-40 object-cover rounded-2xl"
-              />
-
-              <div class="flex justify-between items-center mt-4">
-                <div>
-                  <h3 class="font-semibold text-lg">Mountain</h3>
-
-                  <p class="text-gray-500 text-sm">356 Tours, 248 Activities</p>
-                </div>
-
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
-                >
-                  →
-                </div>
-              </div>
-            </div>
-
-            <!-- Card -->
-            <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
-            >
-              <img
-                src="./src/assets/images/boat.png.avif"
-                alt="Safari Image"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-40 object-cover rounded-2xl"
-              />
-
-              <div class="flex justify-between items-center mt-4">
-                <div>
-                  <h3 class="font-semibold text-lg">Safari</h3>
-
-                  <p class="text-gray-500 text-sm">356 Tours, 248 Activities</p>
-                </div>
-
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
-                >
-                  →
-                </div>
-              </div>
-            </div>
-
-            <!-- Card -->
-            <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
-            >
-              <img
-                src="./src/assets/images/boat.png.avif"
-                alt="Desert Image"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-40 object-cover rounded-2xl"
-              />
-
-              <div class="flex justify-between items-center mt-4">
-                <div>
-                  <h3 class="font-semibold text-lg">Desert</h3>
-
-                  <p class="text-gray-500 text-sm">356 Tours, 248 Activities</p>
-                </div>
-
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
-                >
-                  →
-                </div>
-              </div>
-            </div>
-
-            <!-- Card -->
-            <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
-            >
-              <img
-                src="./src/assets/images/boat.png.avif"
-                alt="Flower Image"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-40 object-cover rounded-2xl"
-              />
-
-              <div class="flex justify-between items-center mt-4">
-                <div>
-                  <h3 class="font-semibold text-lg">Flower</h3>
-
-                  <p class="text-gray-500 text-sm">356 Tours, 248 Activities</p>
-                </div>
-
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
-                >
-                  →
-                </div>
-              </div>
-            </div>
-
-            <!-- Card -->
-            <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
-            >
-              <img
-                src="./src/assets/images/boat.png.avif"
-                alt="Beach Image"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-40 object-cover rounded-2xl"
-              />
-
-              <div class="flex justify-between items-center mt-4">
-                <div>
-                  <h3 class="font-semibold text-lg">Beach</h3>
-
-                  <p class="text-gray-500 text-sm">356 Tours, 248 Activities</p>
-                </div>
-
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
-                >
-                  →
-                </div>
-              </div>
-            </div>
-
-            <!-- Card -->
-            <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
-            >
-              <img
-                src="./src/assets/images/boat.png.avif"
-                alt="Temples Image"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-40 object-cover rounded-2xl"
-              />
-
-              <div class="flex justify-between items-center mt-4">
-                <div>
-                  <h3 class="font-semibold text-lg">Temples</h3>
-
-                  <p class="text-gray-500 text-sm">356 Tours, 248 Activities</p>
-                </div>
-
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
-                >
-                  →
-                </div>
-              </div>
-            </div>
-
-            <!-- Card -->
-            <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
-            >
-              <img
-                src="./src/assets/images/boat.png.avif"
-                alt="yacht image"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-40 object-cover rounded-2xl"
-              />
-
-              <div class="flex justify-between items-center mt-4">
-                <div>
-                  <h3 class="font-semibold text-lg">Yacht</h3>
-
-                  <p class="text-gray-500 text-sm">356 Tours, 248 Activities</p>
-                </div>
-
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
-                >
-                  →
-                </div>
-              </div>
-            </div>
-
-            <!-- Card -->
-            <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
-            >
-              <img
-                src="./src/assets/images/boat.png.avif"
-                alt="Valley image"
-                loading="lazy"
-                decoding="async"
-                class="w-full h-40 object-cover rounded-2xl"
-              />
-
-              <div class="flex justify-between items-center mt-4">
-                <div>
-                  <h3 class="font-semibold text-lg">Valley</h3>
-
-                  <p class="text-gray-500 text-sm">356 Tours, 248 Activities</p>
-                </div>
-
-                <div
-                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
-                >
-                  →
-                </div>
-              </div>
-            </div>
           </div>
 
           <!-- Promotions -->
@@ -1428,9 +1345,9 @@ decoding="async"> -->
               <img
                 src="./src/assets/images/banner1.png.avif"
                 class="absolute right-0 bottom-0 h-full object-cover"
-                alt
-                loading="lazy"
-                decoding="async"
+                alt="banner1"
+                
+                
               />
 
               <div class="relative z-10 p-8 max-w-xs">
@@ -1459,9 +1376,9 @@ decoding="async"> -->
               <img
                 src="./src/assets/images/banner2.png.avif"
                 class="absolute right-0 bottom-0 h-full object-cover"
-                alt
-                loading="lazy"
-                decoding="async"
+                alt="banner2"
+                
+                
               />
 
               <div class="relative z-10 p-8 max-w-xs">
@@ -1483,7 +1400,51 @@ decoding="async"> -->
           </div>
         </div>
       </section>
-     
+      <!-- top rated hotels section  -->
+      <section class="py-20 bg-[#FFF0EC] overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- Header -->
+          <div class="flex items-center justify-between mb-10">
+            <div>
+              <h2 class="text-5xl font-bold text-slate-900">
+                Top Rated Hotels
+              </h2>
+
+              <p class="text-slate-500 mt-2">
+                Quality is judged by customers. Book at the ideal price!
+              </p>
+            </div>
+
+            <!-- Slider Buttons -->
+            <div class="hidden lg:flex gap-3">
+              <button
+                id="hotelPrev"
+                class="w-11 h-11 rounded-full bg-white shadow hover:bg-slate-100 transition cursor-pointer"
+              >
+                ←
+              </button>
+
+              <button
+                id="hotelNext"
+                class="w-11 h-11 rounded-full bg-white shadow hover:bg-slate-100 transition cursor-pointer"
+              >
+                →
+              </button>
+            </div>
+          </div>
+
+          <!-- Slider -->
+          <div class="">
+            <div
+              id="hotelSlider"
+              class="flex gap-4 transition-transform duration-500"
+            >
+              <!-- Cards injected here -->
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- ================= Luxury Travel Section ================= -->
       <section class="py-20">
         <div class="max-w-7xl mx-auto px-5 lg:px-8">
@@ -1521,7 +1482,7 @@ decoding="async"> -->
               <div class="self-center">
                 <img
                   src="./src/assets/images/payment.avif"
-                  alt
+                  alt="payment1"
                   class="w-32 h-64 object-cover rounded-[40px]"
                 />
               </div>
@@ -1530,13 +1491,13 @@ decoding="async"> -->
               <div class="flex flex-col gap-4">
                 <img
                   src="./src/assets/images/payment2.avif"
-                  alt
+                  alt="payment2"
                   class="w-32 h-36 object-cover rounded-[32px]"
                 />
 
                 <img
                   src="./src/assets/images/payment3.avif"
-                  alt
+                  alt="payment3"
                   class="w-32 h-24 object-cover rounded-[32px]"
                 />
               </div>
@@ -1545,13 +1506,13 @@ decoding="async"> -->
               <div class="flex flex-col gap-4">
                 <img
                   src="./src/assets/images/payment4.avif"
-                  alt
+                  alt="payment4"
                   class="w-32 h-24 object-cover rounded-[32px]"
                 />
 
                 <img
                   src="./src/assets/images/payment5.png.svg"
-                  alt
+                  alt="payment5"
                   class="w-32 h-36 object-cover rounded-[32px]"
                 />
               </div>
@@ -1665,61 +1626,61 @@ decoding="async"> -->
               src="./src/assets/images/21 → paypal.png.avif"
               class="h-8"
               alt="PayPal"
-              loading="lazy"
-              decoding="async"
+              
+              
             />
 
             <img
               src="./src/assets/images/21 → stripe.png.avif"
               class="h-8"
               alt="Stripe"
-              loading="lazy"
-              decoding="async"
+              
+              
             />
 
             <img
               src="./src/assets/images/21 → payoneer.png.avif"
               class="h-8"
               alt="Payoneer"
-              loading="lazy"
-              decoding="async"
+              
+              
             />
 
             <img
               src="./src/assets/images/21 → visa.png.avif"
               class="h-8"
               alt="Visa"
-              loading="lazy"
-              decoding="async"
+              
+              
             />
 
             <img
               src="./src/assets/images/21 → cashapp.png.avif"
               class="h-8"
               alt="Cash App"
-              loading="lazy"
-              decoding="async"
+              
+              
             />
 
             <img
               src="./src/assets/images/21 → bitcoin.png.avif"
               class="h-8"
               alt="Bitcoin"
-              loading="lazy"
-              decoding="async"
+              
+              
             />
 
             <img
               src="./src/assets/images/21 → discover.png.avif"
               class="h-8"
               alt="Discover"
-              loading="lazy"
-              decoding="async"
+              
+              
             />
           </div>
         </div>
       </section>
-      <section class="bg-[#E4F9F9] py-12 sm:py-16 lg:py-20 mt-6 lg:mt-10">
+      <section class="bg-[#E4F9F9] py-12 sm:py-16 lg:py-20 mt-6 lg:mt-10 overflow-hidden">
         <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <!-- Header -->
           <div
@@ -1733,26 +1694,27 @@ decoding="async"> -->
                 The world's leading car brands
               </p>
             </div>
-            <div class="flex gap-2 shrink-0">
+            <div class="hidden lg:flex gap-3">
               <button
-                class="p-4 rounded-full border"
                 id="prevBtn"
-                aria-label="Previous"
+                aria-label="previous button"
+                class="w-11 h-11 rounded-full bg-white shadow hover:bg-slate-100 transition cursor-pointer"
               >
-                <img src="./src/assets/images/left-arrow.png" alt />
+                ←
               </button>
+
               <button
-                class="p-4 bg-gray-300 rounded-full border"
                 id="nextBtn"
-                aria-label="Next"
+                aria-label="next button"
+                class="w-11 h-11 rounded-full bg-white shadow hover:bg-slate-100 transition cursor-pointer"
               >
-                <img src="./src/assets/images/right-arrow.png" alt />
+                →
               </button>
             </div>
           </div>
 
           <!-- Slider -->
-          <div class="overflow-hidden">
+          <div class="">
             <div
               id="slider"
               class="flex gap-4 transition-transform duration-500"
@@ -1781,8 +1743,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/lexus.png.svg"
                   alt="Lexus"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
               <button
@@ -1792,8 +1754,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/mer.png.png"
                   alt="Mercedes"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
               <button
@@ -1803,8 +1765,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/bugatti.png.png"
                   alt="Bugatti"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
               <button
@@ -1814,8 +1776,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/jaguar.png.png"
                   alt="Jaguar"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
               <button
@@ -1825,8 +1787,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/honda.png.png"
                   alt="Honda"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
               <button
@@ -1836,8 +1798,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/chevrolet.png.png"
                   alt="Chevvy"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
               <button
@@ -1847,8 +1809,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/acura.png.png"
                   alt="Acura"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
               <button
@@ -1858,8 +1820,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/bmw.png.png"
                   alt="BMW"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
               <button
@@ -1869,8 +1831,8 @@ decoding="async"> -->
                 <img
                   src="./src/assets/images/toyota.png.png"
                   alt="toyota"
-                  loading="lazy"
-                  decoding="async"
+                  
+                  
                 />
               </button>
             </div>
@@ -1878,272 +1840,94 @@ decoding="async"> -->
         </div>
       </section>
       <section class="py-20 bg-white">
-  <div class="max-w-7xl mx-auto px-6">
-
-    <!-- Header -->
-    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12">
-      <div>
-        <h2 class="text-4xl font-bold text-gray-900">
-          News, Tips & Guides
-        </h2>
-        <p class="mt-2 text-gray-500">
-          Favorite destinations based on customer reviews
-        </p>
-      </div>
-
-      <button
-        class="bg-black text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-gray-800 transition w-fit">
-        View More
-        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none"
-          viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round"
-            stroke-width="2" d="M9 5l7 7-7 7"/>
-        </svg>
-      </button>
-    </div>
-
-    <!-- Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Card 1 -->
-      <div
-        class="bg-white rounded-3xl overflow-hidden border border-gray-200 hover:shadow-xl transition duration-300">
-
-        <div class="relative">
-
-          <img
-            src="./src/assets/images/journey3.avif"
-            class="h-64 w-full object-cover"
-            alt="Travel">
-
-          <!-- Category -->
-          <span
-            class="absolute top-4 left-4 bg-white px-4 py-1 rounded-full text-xs font-semibold">
-            Cultural
-          </span>
-
-          <!-- Heart -->
-          <button
-          aria-label="favourite"
-            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
-
-            <!-- <svg xmlns="http://www.w3.org/2000/svg"
-              class="w-5 h-5 text-gray-700"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor">
-
-              <path stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4.318 6.318a4.5 4.5 0 016.364
-                0L12 7.636l1.318-1.318a4.5
-                4.5 0 116.364 6.364L12
-                20.364l-7.682-7.682a4.5
-                4.5 0 010-6.364z"/>
-            </svg> -->
-            <img src="./src/assets/images/heart.avif" alt="">
-
-          </button>
-        </div>
-
-        <div class="p-5">
-
-          <!-- Meta -->
+        <div class="max-w-7xl mx-auto px-6">
+          <!-- Header -->
           <div
-            class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
-
-            <span>📅 18 Sep 2024</span>
-            <span>🕒 6 mins</span>
-            <span>💬 38 comments</span>
-
-          </div>
-
-          <h3
-            class="text-xl font-semibold leading-8 mb-6">
-
-            Ultimate Travel Planning Guide:
-            10 Tips for a Seamless Journey
-
-          </h3>
-
-          <div class="flex justify-between items-center">
-
-            <div class="flex items-center gap-3">
-
-              <img
-                src="./src/assets/images/randomUser.avif"
-                alt="user"
-                class="w-10 h-10 rounded-full">
-
-              <span class="font-medium text-sm">
-                Jimmy Dave
-              </span>
-
+            class="flex flex-col md:flex-row md:items-center md:justify-between gap-6 mb-12"
+          >
+            <div>
+              <h2 class="text-4xl font-bold text-gray-900">
+                News, Tips & Guides
+              </h2>
+              <p class="mt-2 text-gray-500">
+                Favorite destinations based on customer reviews
+              </p>
             </div>
 
             <button
-              class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200">
-
-              Keep Reading
-
+              id="news-vm"
+              data-type="0"
+              class="bg-black text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-gray-800 transition w-fit"
+            >
+              <span>View More</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
             </button>
-
           </div>
 
-        </div>
-
-      </div>
-
-      <!-- Card 2 -->
-      <div
-        class="bg-white rounded-3xl overflow-hidden border border-gray-200 hover:shadow-xl transition duration-300">
-
-        <div class="relative">
-
-          <img
-            src="./src/assets/images/last-2.avif"
-            alt="image"
-            class="h-64 w-full object-cover">
-
-          <span
-            class="absolute top-4 left-4 bg-white px-4 py-1 rounded-full text-xs font-semibold">
-            Travel
-          </span>
-
-          <button
-          aria-label="favourite"
-            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
-
-            🤍
-
-          </button>
-
-        </div>
-
-        <div class="p-5">
-
-          <div class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
-
-            <span>📅 18 Sep 2024</span>
-            <span>🕒 6 mins</span>
-            <span>💬 38 comments</span>
-
+          <!-- Cards -->
+          <div
+            id="news-section"
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          >
+            <!-- Card 1 -->
           </div>
-
-          <h3 class="text-xl font-semibold leading-8 mb-6">
-
-            Top 10 Travel Hacks for Budget-Conscious Adventures
-
-          </h3>
-
-          <div class="flex justify-between items-center">
-
-            <div class="flex items-center gap-3">
-
-              <img
-                src="./src/assets/images/randomUser.avif"
-                alt="user"
-                class="w-10 h-10 rounded-full">
-
-              <span class="font-medium text-sm">
-
-                Jimmy Dave
-
+        </div>
+      </section>
+      <section class="py-24 relative overflow-hidden">
+        <img
+          src="./src/assets/images/Image.avif"
+          alt="image"
+          class="absolute inset-0 w-full h-full object-cover -z-10 select-none pointer-events-none"
+        />
+        <div class="max-w-7xl mx-auto px-5">
+          <div class="flex justify-between items-end">
+            <div>
+              <span
+                class="p-2 rounded-full bg-yellow-300 text-sm font-semibold"
+              >
+                Testimonials
               </span>
 
+              <h2 class="text-5xl font-bold mt-5">
+                Don't take our word for it
+              </h2>
             </div>
+          </div>
 
-            <button
-              class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200">
+          <div class="mt-16">
+            <div
+              id="testimonialSlider"
+              class="flex gap-6 transition-transform duration-500"
+            ></div>
+          </div>
 
-              Keep Reading
-
+          <div class="flex justify-end gap-3 mt-10">
+            <button id="testimonialPrev" class="w-11 h-11 rounded-full">
+              ←
             </button>
 
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- Card 3 -->
-      <div
-        class="bg-white rounded-3xl overflow-hidden border border-gray-200 hover:shadow-xl transition duration-300">
-
-        <div class="relative">
-
-          <img
-            src="./src/assets/images/last.avif"
-            alt="image"
-            class="h-64 w-full object-cover">
-
-          <span
-            class="absolute top-4 left-4 bg-white px-4 py-1 rounded-full text-xs font-semibold">
-            Discovery
-          </span>
-
-          <button
-            aria-label="favourite"
-            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
-
-            🤍
-
-          </button>
-
-        </div>
-
-        <div class="p-5">
-
-          <div class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
-
-            <span>📅 18 Sep 2024</span>
-            <span>🕒 6 mins</span>
-            <span>💬 38 comments</span>
-
-          </div>
-
-          <h3 class="text-xl font-semibold leading-8 mb-6">
-
-            Discovering Hidden Gems:
-            10 Off-the-Beaten-Path Travel Tips
-
-          </h3>
-
-          <div class="flex justify-between items-center">
-
-            <div class="flex items-center gap-3">
-
-              <img
-                src="./src/assets/images/randomUser.avif"
-                alt="user"
-                class="w-10 h-10 rounded-full">
-
-              <span class="font-medium text-sm">
-
-                Jimmy Dave
-
-              </span>
-
-            </div>
-
             <button
-              class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200">
-
-              Keep Reading
-
+              id="testimonialNext"
+              class="w-11 h-11 rounded-full bg-gray-300"
+            >
+              →
             </button>
-
           </div>
-
         </div>
-
-      </div>
-
-    </div>
-
-  </div>
-</section>
+      </section>
     </main>
     <footer class="bg-black text-gray-400 pt-10 sm:pt-14">
       <!-- Container -->
@@ -2165,26 +1949,62 @@ decoding="async"> -->
           <div
             class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto"
           >
+            <form
+              id="subscribeForm"
+              class="flex flex-col sm:flex-row gap-3 w-full"
+            >
+              <!-- Email Input -->
+              <div
+                class="flex items-center w-full sm:w-80 lg:w-96 rounded-full border border-gray-700 bg-white/5 px-5 py-3 transition-all duration-300 focus-within:border-yellow-400 focus-within:ring-2 focus-within:ring-yellow-400/20"
+              >
+                <span class="mr-3 text-lg">✉️</span>
+
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  required
+                  class="w-full bg-transparent text-white placeholder:text-gray-500 outline-none"
+                />
+              </div>
+
+              <!-- Subscribe Button -->
+              <button
+                type="submit"
+                class="shrink-0 rounded-full bg-yellow-400 px-8 py-3.5 font-semibold text-black transition-all duration-300 hover:bg-yellow-300 hover:scale-105 active:scale-95"
+              >
+                Subscribe
+              </button>
+            </form>
+
+            <!-- Toast -->
+            <!-- Success Toast -->
             <div
-              class="flex items-center bg-transparent border border-gray-700 rounded-full px-5 py-3 w-full sm:w-80 lg:w-96"
+              id="toast"
+              class="fixed top-30 right-10 z-50 max-w-sm w-full bg-white rounded-2xl shadow-2xl border border-green-200 p-4 flex items-start gap-4 opacity-0 translate-x-10 pointer-events-none transition-all duration-300"
             >
-              <span class="text-gray-500 mr-3">✉️</span>
+              <!-- Icon -->
+              <div
+                class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-green-100"
+              >
+                <span class="text-2xl">✅</span>
+              </div>
 
-              <input
-                type="email"
-                placeholder="Enter your email"
-                class="bg-transparent outline-none text-white placeholder-gray-500 flex-1 min-w-0"
-              />
+              <!-- Content -->
+              <div class="flex-1">
+                <h3 class="text-lg font-semibold text-slate-900">
+                  Subscription Confirmed!
+                </h3>
+
+                <p class="mt-1 text-sm leading-6 text-slate-600">
+                  Thank you for subscribing! You're now part of our travel
+                  community. Stay tuned for exclusive offers, destination
+                  inspiration, and the latest travel updates delivered straight
+                  to your inbox.
+                </p>
+              </div>
             </div>
-
-            <button
-              class="bg-yellow-400 hover:bg-yellow-300 text-black font-semibold px-8 py-4 rounded-full transition w-full sm:w-auto shrink-0"
-            >
-              Subscribe
-            </button>
           </div>
         </div>
-
         <!-- Main Footer -->
 
         <div
@@ -2318,5 +2138,10 @@ decoding="async"> -->
       </div>
     </footer>
     <script type="module" src="./src/js/index.js"></script>
-  </body>
+    <!-- AI Chatbot Widget -->
+<div id="ai-chatbot-root"></div>
+<script src="chatbot/config.js"></script>
+<script src="chatbot/scraper.js"></script>
+<script src="chatbot/chatbot.js"></script>
+</body>
 </html>

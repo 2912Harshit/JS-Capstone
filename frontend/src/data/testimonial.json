@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "The best booking system",
+    "review": "I've been using the hotel booking system for several years now, and it's become my go-to platform for planning my trips. The interface is user-friendly and I appreciate the detailed information and real-time availability of hotels.",
+    "name": "Sara Mohamed",
+    "location": "Jakarta",
+    "rating": 5,
+    "avatar": "./src/assets/images/randomUser.avif"
+  },
+  {
+    "id": 2,
+    "title": "Excellent travel experience",
+    "review": "Booking through this platform was quick and effortless. I found amazing deals, and the support team answered all my questions within minutes. Definitely recommended.",
+    "name": "Atend John",
+    "location": "California",
+    "rating": 5,
+    "avatar": "./src/assets/images/randomUser.avif"
+  },
+  {
+    "id": 3,
+    "title": "Highly recommended",
+    "review": "Everything from searching hotels to confirming reservations was seamless. The pricing is transparent, and the booking confirmation was instant.",
+    "name": "Sara Mohamed",
+    "location": "Jakarta",
+    "rating": 5,
+    "avatar": "./src/assets/images/randomUser.avif"
+  },
+  {
+    "id": 4,
+    "title": "Great customer support",
+    "review": "Whenever I had a question, customer support responded quickly and resolved my concerns. It made my travel planning stress-free.",
+    "name": "Emily Watson",
+    "location": "London",
+    "rating": 5,
+    "avatar": "./src/assets/images/randomUser.avif"
+  },
+  {
+    "id": 5,
+    "title": "Perfect for frequent travelers",
+    "review": "I travel every month for work, and this booking platform has saved me both time and money. I especially like the hotel recommendations.",
+    "name": "David Miller",
+    "location": "New York",
+    "rating": 5,
+    "avatar": "./src/assets/images/randomUser.avif"
+  },
+  {
+    "id": 6,
+    "title": "Wonderful booking experience",
+    "review": "The interface is clean, fast, and easy to navigate. I was able to compare hotels and make a reservation in just a few minutes.",
+    "name": "Sophia Brown",
+    "location": "Sydney",
+    "rating": 5,
+    "avatar": "./src/assets/images/randomUser.avif"
+  }
+]

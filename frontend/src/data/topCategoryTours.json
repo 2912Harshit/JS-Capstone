@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "title": "Mountain",
+    "image": "./src/assets/images/boat.png.avif",
+    "tours": 186,
+    "activities": 94
+  },
+  {
+    "id": 2,
+    "title": "Safari",
+    "image": "./src/assets/images/boat.png.avif",
+    "tours": 132,
+    "activities": 67
+  },
+  {
+    "id": 3,
+    "title": "Desert",
+    "image": "./src/assets/images/boat.png.avif",
+    "tours": 91,
+    "activities": 43
+  },
+  {
+    "id": 4,
+    "title": "Flower",
+    "image": "./src/assets/images/boat.png.avif",
+    "tours": 78,
+    "activities": 35
+  },
+  {
+    "id": 5,
+    "title": "Beach",
+    "image": "./src/assets/images/boat.png.avif",
+    "tours": 245,
+    "activities": 121
+  },
+  {
+    "id": 6,
+    "title": "Temples",
+    "image": "./src/assets/images/boat.png.avif",
+    "tours": 164,
+    "activities": 82
+  },
+  {
+    "id": 7,
+    "title": "Yacht",
+    "image": "./src/assets/images/boat.png.avif",
+    "tours": 59,
+    "activities": 28
+  },
+  {
+    "id": 8,
+    "title": "Valley",
+    "image": "./src/assets/images/boat.png.avif",
+    "tours": 118,
+    "activities": 61
+  }
+]

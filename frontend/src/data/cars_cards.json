@@ -26,7 +26,7 @@
     "price": 470.50,
     "rating": 4.82,
     "reviews": 401,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": false
   },
 
@@ -57,7 +57,7 @@
     "price": 810.75,
     "rating": 4.91,
     "reviews": 577,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": false
   },
 
@@ -88,7 +88,7 @@
     "price": 6200.00,
     "rating": 5.0,
     "reviews": 51,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": true
   },
 
@@ -119,7 +119,7 @@
     "price": 560.20,
     "rating": 4.84,
     "reviews": 390,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": false
   },
 
@@ -150,7 +150,7 @@
     "price": 420.90,
     "rating": 4.81,
     "reviews": 497,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": true
   },
 
@@ -181,7 +181,7 @@
     "price": 870.45,
     "rating": 4.88,
     "reviews": 389,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": false
   },
 
@@ -212,7 +212,7 @@
     "price": 645.75,
     "rating": 4.90,
     "reviews": 278,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": false
   },
 
@@ -243,7 +243,7 @@
     "price": 860.00,
     "rating": 4.94,
     "reviews": 622,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": true
   },
 
@@ -274,7 +274,7 @@
     "price": 430.50,
     "rating": 4.87,
     "reviews": 523,
-    "image": "./src/assets/images/car.png.avif",
+    "image": "./src/assets/images/car3.png.avif",
     "featured": true
   }
 ]

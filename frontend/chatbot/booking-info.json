@@ -1,0 +1,18 @@
+{
+  "siteName": "Travila",
+  "bookingProcess": {
+    "steps": [
+      "Browse any category — Tours, Hotels, Cars, or Rentals — using the tabs on the homepage.",
+      "Click on a card you like to view more details, or click 'Book Now'.",
+      "A booking form will open — fill in your Full Name, Email, and Phone Number.",
+      "For hotels/tours, select your Check-In and Check-Out dates and number of Guests (Adults/Children).",
+      "For cars, select your rental dates and any add-ons shown.",
+      "Review the Total Estimated Price shown at the bottom of the form.",
+      "Add any Special Requests if needed (optional).",
+      "Click 'Confirm Booking' to complete your reservation.",
+      "You'll instantly see a confirmation screen with your Booking ID, and a confirmation email will be sent to you."
+    ],
+    "cancellation": "Free cancellation is available up to 24 hours before your booking start date.",
+    "support": "For help with an existing booking or any issues, contact our support team — available 24/7."
+  }
+}

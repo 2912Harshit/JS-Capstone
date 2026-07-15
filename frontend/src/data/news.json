@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "category": "Cultural",
+    "image": "./src/assets/images/journey3.avif",
+    "date": "18 Sep 2024",
+    "readTime": "6 mins",
+    "comments": 38,
+    "title": "Ultimate Travel Planning Guide: 10 Tips for a Seamless Journey",
+    "author": {
+      "name": "Jimmy Dave",
+      "avatar": "./src/assets/images/randomUser.avif"
+    }
+  },
+  {
+    "id": 2,
+    "category": "Travel",
+    "image": "./src/assets/images/last.avif",
+    "date": "21 Sep 2024",
+    "readTime": "8 mins",
+    "comments": 24,
+    "title": "Top 10 Travel Hacks for Budget-Conscious Adventures",
+    "author": {
+      "name": "Jimmy Dave",
+      "avatar": "./src/assets/images/randomUser.avif"
+    }
+  },
+  {
+    "id": 3,
+    "category": "Discovery",
+    "image": "./src/assets/images/last-2.avif",
+    "date": "24 Sep 2024",
+    "readTime": "5 mins",
+    "comments": 19,
+    "title": "Discovering Hidden Gems: 10 Off-the-Beaten-Path Travel Tips",
+    "author": {
+      "name": "Jimmy Dave",
+      "avatar": "./src/assets/images/randomUser.avif"
+    }
+  },
+  {
+    "id": 4,
+    "category": "Adventure",
+    "image": "./src/assets/images/journey3.avif",
+    "date": "27 Sep 2024",
+    "readTime": "7 mins",
+    "comments": 42,
+    "title": "Best Adventure Destinations for Thrill Seekers in 2024",
+    "author": {
+      "name": "Jimmy Dave",
+      "avatar": "./src/assets/images/randomUser.avif"
+    }
+  },
+  {
+    "id": 5,
+    "category": "Beach",
+    "image": "./src/assets/images/last.avif",
+    "date": "30 Sep 2024",
+    "readTime": "4 mins",
+    "comments": 16,
+    "title": "Top Beach Escapes to Relax, Recharge, and Enjoy the Ocean",
+    "author": {
+      "name": "Jimmy Dave",
+      "avatar": "./src/assets/images/randomUser.avif"
+    }
+  },
+  {
+    "id": 6,
+    "category": "Food",
+    "image": "./src/assets/images/last-2.avif",
+    "date": "03 Oct 2024",
+    "readTime": "9 mins",
+    "comments": 51,
+    "title": "A Food Lover's Guide to the World's Most Delicious Destinations",
+    "author": {
+      "name": "Jimmy Dave",
+      "avatar": "./src/assets/images/randomUser.avif"
+    }
+  }
+]

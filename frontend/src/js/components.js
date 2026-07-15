@@ -29,18 +29,140 @@
 // export function switchTab(tabName) {
 //   console.log("Switched to tab:", tabName);
 // }
+function newsCard(card) {
+  return `
+          <div
+        class="bg-white rounded-3xl overflow-hidden border border-gray-200 hover:shadow-xl transition duration-300">
 
-function allCard(item){
+        <div class="relative">
+
+          <img
+            src=${card.image}
+            
+            class="h-64 w-full object-cover"
+            alt="Travel">
+
+          <!-- Category -->
+          <span
+            class="absolute top-4 left-4 bg-white px-4 py-1 rounded-full text-xs font-semibold">
+            ${card.category}
+          </span>
+
+          <!-- Heart -->
+          <button
+          aria-label="favourite"
+            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+
+          </button>
+        </div>
+
+        <div class="p-5">
+
+          <!-- Meta -->
+          <div
+            class="flex flex-wrap gap-4 text-xs text-gray-500 mb-4">
+
+            <span>📅 ${card.date}</span>
+            <span>🕒 ${card.readTime} mins</span>
+            <span>💬 ${card.comments} comments</span>
+
+          </div>
+
+          <h3
+            class="text-xl font-semibold leading-8 mb-6">
+
+            ${card.title}
+
+          </h3>
+
+          <div class="flex justify-between items-center">
+
+            <div class="flex items-center gap-3">
+
+              <img
+                src=${card.author.avatar}
+                alt="user"
+                class="w-10 h-10 rounded-full">
+
+              <span class="font-medium text-sm">
+                ${card.author.name}
+              </span>
+
+            </div>
+
+            <button
+              class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium hover:bg-gray-200">
+
+              Keep Reading
+
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+  `;
+}
+
+export function renderNews(section, data, filters = {}) {
+  section.innerHTML = "";
+  if (filters.view == 1) data = data.slice(0, 3);
+  data.forEach((card) => {
+    section.insertAdjacentHTML("beforeend", newsCard(card));
+  });
+}
+
+function topCategoryToursCard(card) {
+  return `
+    <div
+              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
+            >
+              <img
+                src="${card.image}"
+                alt="${card.title}"
+                class="w-full h-40 object-cover rounded-2xl"
+              />
+
+              <div class="flex justify-between items-center mt-4">
+                <div>
+                  <h3 class="font-semibold text-lg">${card.title}</h3>
+
+                  <p class="text-gray-500 text-sm">${card.tours} Tours, ${card.activities} Activities</p>
+                </div>
+
+                <div
+                  class="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center"
+                >
+                  →
+                </div>
+              </div>
+            </div>
+  `;
+}
+
+export function renderTopCategoryTours(section, data, filters = {}) {
+  section.innerHTML = "";
+  if (filters.view == 1) data = data.slice(0, 4);
+  data.forEach((card) => {
+    section.insertAdjacentHTML("beforeend", topCategoryToursCard(card));
+  });
+}
+
+function allCard(item) {
   return `
 <div
-  class="border overflow-hidden h-[380px] sm:h-[440px] lg:h-150 flex flex-col rounded-3xl sm:rounded-4xl bg-white"
+  class="group border overflow-hidden h-[380px] sm:h-[440px] lg:h-150 flex flex-col rounded-3xl sm:rounded-4xl bg-white
+  shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
 >
   <!-- Image Section -->
   <div class="relative h-[55%]">
     <img
       src=${item.image}
       alt="${item.location}"
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
     />
 
     <div class="absolute top-2 sm:top-3 left-2 sm:left-3 rounded-4xl px-3 py-1 sm:w-1/3 flex items-center justify-center bg-white text-red-500 text-xs sm:text-sm whitespace-nowrap capitalize">
@@ -48,15 +170,17 @@ function allCard(item){
     </div>
 
     <button
-      class="absolute top-2 sm:top-3 right-2 sm:right-3 rounded-full p-1.5 sm:p-2 bg-white hover:text-red-500 shrink-0"
-    >
-      <img src="./src/assets/images/heart.avif" alt="heart">
-    </button>
+          aria-label="favourite"
+            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+
+          </button>
   </div>
 
   <!-- Bottom Card -->
   <div
-    class="flex flex-col justify-between gap-2 p-3 sm:p-4 flex-1 rounded-t-3xl sm:rounded-t-4xl bg-white relative"
+    class="flex flex-col justify-between gap-2 p-3 sm:p-4 flex-1 bg-white relative"
   >
     <!-- Location -->
     <div class="text-xl sm:text-2xl lg:text-4xl font-semibold capitalize">
@@ -147,24 +271,21 @@ function allCard(item){
 </div>
 `;
 }
-export function renderAll(allSection,data,filters={}){
-  console.log(filters)
+export function renderAll(allSection, data, filters = {}) {
+  console.log(filters);
 
-  allSection.innerHTML="";
+  allSection.innerHTML = "";
   const {
-    type:fType,
-    location:fLocation,
-    checkIn:fCheckIn,
-    checkOut:fCheckOut,
-    guests:fGuests
-  }=filters;
+    type: fType,
+    location: fLocation,
+    checkIn: fCheckIn,
+    checkOut: fCheckOut,
+    guests: fGuests,
+  } = filters;
 
-  const {
-    adults:fAdults,
-    children:fChildren
-  }=fGuests;
+  const { adults: fAdults, children: fChildren } = fGuests;
 
-  data.forEach((card)=>{
+  data.forEach((card) => {
     const {
       type: cType,
       location: cLocation,
@@ -172,62 +293,91 @@ export function renderAll(allSection,data,filters={}){
       checkOut: cCheckOut,
       guests: cGuests,
     } = card;
-    const{
-      adults:cAdults,
-      children:cChildren
-    }=cGuests;
+    const { adults: cAdults, children: cChildren } = cGuests;
 
-    if(fType!=cType ||
-        fLocation!=cLocation ||
-       fCheckIn!=cCheckIn ||
-       fCheckOut!=cCheckOut ||
-       cAdults<fAdults ||
-       cChildren<fChildren
-      ){
-        console.log("3");
-        return;
-       }
-    allSection.insertAdjacentHTML("beforeend",allCard(card));
-    
-  })
+    if (
+      fType != cType ||
+      fLocation != cLocation ||
+      fCheckIn != cCheckIn ||
+      fCheckOut != cCheckOut ||
+      cAdults < fAdults ||
+      cChildren < fChildren
+    ) {
+      console.log("3");
+      return;
+    }
+    allSection.insertAdjacentHTML("beforeend", allCard(card));
+  });
 }
-
 
 function tourCard(tour) {
   console.log(tour);
   return `
             <div
-              class="border overflow-hidden bg-cover bg-center h-[380px] sm:h-[440px] lg:h-150 flex flex-col justify-between rounded-3xl sm:rounded-4xl"
-              style="
-                background-image: url(&quot;${tour.image}&quot;);
-              "
+              class="relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden bg-cover bg-center h-[380px] sm:h-[200px] lg:h-130 flex flex-col justify-between rounded-3xl sm:rounded-4xl"
+              
             >
-              <div class="flex justify-between items-start p-2 sm:p-3 gap-2">
-                <div class="rounded-4xl px-3 py-1 sm:w-1/3 flex items-center justify-center bg-white text-amber-300 text-xs sm:text-sm whitespace-nowrap">Top Rated</div>
-                <button class="rounded-full p-1.5 sm:p-2 bg-white hover:text-red-500 text-xs sm:text-sm shrink-0">
-                <img src="./src/assets/images/heart.avif" alt="heart">
-                </button>
-              </div>
-              <div
-                class="flex flex-col justify-between gap-1 sm:gap-2 p-3 sm:p-4 min-h-[42%] rounded-3xl sm:rounded-4xl bg-white relative"
-              >
-                <div class="text-xl sm:text-2xl lg:text-4xl font-semibold  pr-2">${tour.title}
-                </div>
-                <div class="flex flex-wrap justify-between gap-x-4 gap-y-1 text-xs sm:text-sm lg:text-base text-gray-400">
-                  <div>${tour.days} days ${tour.nights} nights</div>
-                  <div>4-6 guests</div>
-                </div>
-                <div class="flex items-center justify-between gap-2 pt-1">
-                  <div class="text-gray-400 text-xs sm:text-sm shrink-0"><span class="text-lg sm:text-2xl lg:text-3xl font-semibold text-black">$${tour.price}</span>/person</div>
-                  <button class="rounded-4xl px-4 py-2 sm:p-3 bg-black text-white hover:bg-gray-500 text-xs sm:text-sm shrink-0 book-now-btn" data-id="${tour.id}" data-type="tour" >Book now</button>
-                </div>
-                <div
-                  class="absolute right-3 sm:right-4 -top-4 sm:-top-5 rounded-4xl px-2 py-1 shadow-2xl shadow-black bg-white text-xs sm:text-sm whitespace-nowrap"
-                >
-                  ⭐${tour.rating} ( ${tour.reviews} reviews )
-                </div>
-              </div>
-            </div>
+            <div class="relative h-[50%] sm:h-[55%] shrink-0">
+    <img
+      src="${tour.image}"
+      alt="${tour.category}"
+      class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+      
+    />
+
+    <div class="absolute top-2 sm:top-3 left-2 sm:left-3 rounded-full px-3 sm:px-4 py-1 bg-white text-amber-400 font-medium text-xs sm:text-sm whitespace-nowrap">
+      Top Rated
+    </div>
+
+    <button
+          aria-label="favourite"
+            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+
+          </button>
+  </div>
+             <div
+    class="flex flex-col justify-between flex-1 min-h-0 p-2  bg-white relative border-l border-r rounded-b-4xl border-gray-300"
+  >
+    <div class="p-2 flex flex-col gap-1 sm:gap-2 border-b border-b-gray-400">
+      <div class="text-lg sm:text-2xl lg:text-3xl font-semibold">
+        ${tour.title}
+      </div>
+
+    
+    </div>
+
+    <div class="grid grid-cols-2 w-full p-2 text-gray-400 gap-2 sm:gap-4 text-xs sm:text-base">
+      <div class="flex items-center gap-2">
+        ${tour.days} Days ${tour.nights} Nights
+      </div>
+
+      <div class="flex items-center gap-2">
+        4-6 Guests
+      </div>
+</div>
+    <div class="flex items-center justify-between gap-2 p-1">
+      <div class="text-gray-400 text-xs sm:text-sm shrink-0">
+        <span class="text-lg sm:text-2xl lg:text-3xl font-semibold text-black">
+          $${tour.price}
+        </span>
+        /person
+      </div>
+
+      <button class="rounded-4xl px-4 py-2 sm:p-3 bg-black text-white hover:bg-gray-500 text-xs sm:text-sm shrink-0 book-now-btn"
+      data-id="${tour.id}"
+      data-type="tour">
+        Book now
+      </button>
+    </div>
+
+    <div
+      class="absolute right-3 sm:right-4 -top-4 sm:-top-5 rounded-4xl px-2 py-1 shadow-2xl bg-white text-xs sm:text-sm whitespace-nowrap"
+    >
+      ⭐${tour.rating} (${tour.reviews} reviews)
+    </div>
+  </div>
     `;
 }
 
@@ -260,21 +410,22 @@ export function renderTours(tourSection, tours, filters = {}) {
     // console.log("are yr here");
     if (fPriceFrom > tPrice || tPrice > fPriceTo) return;
     // console.log("i am here");
-    tourSection.insertAdjacentHTML("beforeend",tourCard(tour));
+    tourSection.insertAdjacentHTML("beforeend", tourCard(tour));
   });
 }
 
 function carCard(car) {
   return `
       <div
-  class="overflow-hidden shrink-0 w-[85%] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3rem)/3)] h-[400px] sm:h-[440px] lg:h-150 flex flex-col rounded-3xl sm:rounded-4xl border border-gray-200 shadow-lg bg-white"
+  class="group overflow-hidden shrink-0 w-[85%] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3rem)/3)] h-[400px] sm:h-[600px] lg:h-150 flex flex-col rounded-3xl sm:rounded-4xl border border-gray-200 shadow-lg bg-white
+   hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
 >
   <!-- Car Image -->
   <div class="relative h-[50%] sm:h-[55%] shrink-0">
     <img
       src="${car.image}"
       alt="${car.brand} ${car.model}"
-      class="w-full h-full object-cover"
+      class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
       
     />
 
@@ -283,15 +434,17 @@ function carCard(car) {
     </div>
 
     <button
-      class="absolute top-2 sm:top-3 right-2 sm:right-3 rounded-full p-1.5 sm:p-2 bg-white hover:text-red-500 text-xs sm:text-sm"
-    >
-      <img src="./src/assets/images/heart.avif" alt="heart" >
-    </button>
+          aria-label="favourite"
+            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+
+          </button>
   </div>
 
   <!-- Bottom Card -->
   <div
-    class="flex flex-col justify-between flex-1 min-h-0 p-2 rounded-t-3xl sm:rounded-t-4xl bg-white relative"
+    class="flex flex-col justify-between flex-1 min-h-0 p-2  bg-white relative"
   >
     <div class="p-2 flex flex-col gap-1 sm:gap-2 border-b border-b-gray-400">
       <div class="text-lg sm:text-2xl lg:text-3xl font-semibold truncate">
@@ -299,7 +452,7 @@ function carCard(car) {
       </div>
 
       <div class="flex items-center gap-2 text-xs sm:text-sm truncate">
-        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/location.svg.png" alt=""
+        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/location.svg.png" alt="location"
         >
         ${car.location}
       </div>
@@ -307,25 +460,25 @@ function carCard(car) {
 
     <div class="grid grid-cols-2 w-full p-2 text-gray-400 gap-2 sm:gap-4 text-xs sm:text-sm">
       <div class="flex items-center gap-2 truncate">
-        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/mile.svg.png" alt=""
+        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/mile.svg.png" alt="mileage"
         >
         ${car.mileage}
       </div>
 
       <div class="flex items-center gap-2 truncate">
-        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/automatic.svg.png" alt=""
+        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/automatic.svg.png" alt="transmission"
         >
         ${car.transmission}
       </div>
 
       <div class="flex items-center gap-2 truncate">
-        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/fuel.svg.png" alt=""
+        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/fuel.svg.png" alt="fuel"
         >
         ${car.fuel}
       </div>
 
       <div class="flex items-center gap-2 truncate">
-        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/seat.svg.png" alt=""
+        <img class="h-4 sm:h-5 shrink-0" src="./src/assets/images/seat.svg.png" alt="seat"
         >
         ${car.seats}
       </div>
@@ -394,5 +547,214 @@ export function renderCars(carSection, cars, filters = {}) {
     if (filters.brand.size != 0 && !filters.brand.has(cBrand.toLowerCase()))
       return;
     carSection.insertAdjacentHTML("afterbegin", carCard(car));
+  });
+}
+
+export function renderHotels(slider, data) {
+  data.forEach((hotel) => {
+    slider.insertAdjacentHTML("beforeend", hotelCard(hotel));
+  });
+}
+
+function hotelCard(hotel) {
+  return `
+<div
+class="group bg-white rounded-[32px] overflow-hidden shrink-0
+w-[85%] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3rem)/3)] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+>
+
+<div class="relative h-64 overflow-hidden">
+
+<img
+src="${hotel.image}"
+class="w-full h-full object-cover transition duration-500 group-hover:scale-105"
+alt="hotel"
+/>
+
+<button
+          aria-label="favourite"
+            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+
+          </button>
+
+<div
+class="absolute bottom-4 right-4 bg-white rounded-full px-4 py-2 shadow flex items-center gap-2 text-sm"
+>
+
+⭐
+
+<strong>${hotel.rating}</strong>
+
+<span class="text-gray-500">
+
+(${hotel.reviews} reviews)
+
+</span>
+
+</div>
+
+</div>
+
+<div class="p-6">
+
+<h3 class="text-2xl font-bold leading-snug">
+
+${hotel.title}
+
+</h3>
+
+<div class="flex justify-between mt-5">
+
+<p class="text-gray-500 text-sm">
+
+📍 ${hotel.location}
+
+</p>
+
+<div class="text-yellow-500">
+
+★★★★★
+
+</div>
+
+</div>
+
+<div class="flex justify-between items-center mt-8">
+
+<div>
+
+<span class="text-3xl font-bold">
+
+$${hotel.price}
+
+</span>
+
+<span class="text-gray-500">
+
+/ person
+
+</span>
+
+</div>
+
+<button
+data-type="hotel"
+data-id="${hotel.id}"
+class="book-now-btn px-5 py-2 rounded-full bg-gray-100 hover:bg-black hover:text-white transition"
+>
+
+Book Now
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+`;
+}
+
+function testimonialCard(testimonial) {
+  return `
+    <div
+class="group
+flex-none
+w-[90%]
+sm:w-[calc((100%-1rem)/2)]
+lg:w-[calc((100%-2rem)/3)]
+bg-white
+rounded-[28px]
+border
+border-gray-200
+p-7
+transition-all
+duration-300
+hover:-translate-y-2
+hover:shadow-xl
+h-10px"
+>
+
+    <h3 class="font-bold text-xl">
+
+        ${testimonial.title}
+
+    </h3>
+
+    <p
+    class="mt-5
+    text-gray-500
+    leading-7
+    text-[15px]
+    h-28
+    overflow-hidden"
+    >
+
+        ${testimonial.review}
+
+    </p>
+
+    <div
+    class="mt-8
+    md:flex
+    items-center
+    justify-between
+    "
+    >
+
+        <div
+        class="flex
+        items-center
+        gap-4"
+        >
+
+            <img
+            src="${testimonial.avatar}"
+            alt="avatar"
+            class="w-14
+            h-14
+            rounded-full
+            object-cover"
+            >
+
+            <div>
+
+                <h4 class="font-semibold">
+
+                    ${testimonial.name}
+
+                </h4>
+
+                <p class="text-sm text-gray-500">
+
+                    ${testimonial.location}
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div
+        class="flex
+        text-yellow-400
+        gap-1"
+        >
+
+            ★★★★★
+
+        </div>
+
+    </div>
+
+</div>
+  `;
+}
+
+export function renderTestimonials(slider, data) {
+  data.forEach((card) => {
+    slider.insertAdjacentHTML("beforeend", testimonialCard(card));
   });
 }
