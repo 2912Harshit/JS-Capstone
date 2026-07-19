@@ -118,7 +118,7 @@ export function renderNews(section, data, filters = {}) {
 function topCategoryToursCard(card) {
   return `
     <div
-              class="border rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
+              class="border border-gray-300 rounded-3xl p-3 hover:shadow-xl transition duration-300 cursor-pointer"
             >
               <img
                 src="${card.image}"
@@ -154,7 +154,7 @@ export function renderTopCategoryTours(section, data, filters = {}) {
 function allCard(item) {
   return `
 <div
-  class="group border overflow-hidden h-[380px] sm:h-[440px] lg:h-150 flex flex-col rounded-3xl sm:rounded-4xl bg-white
+  class="group overflow-hidden h-[380px] sm:h-[440px] lg:h-150 flex flex-col rounded-3xl sm:rounded-4xl bg-white
   shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
 >
   <!-- Image Section -->
@@ -180,7 +180,7 @@ function allCard(item) {
 
   <!-- Bottom Card -->
   <div
-    class="flex flex-col justify-between gap-2 p-3 sm:p-4 flex-1 bg-white relative"
+    class="flex flex-col justify-between gap-2 p-3 sm:p-4 flex-1 bg-white relative border-l border-r border-gray-300 rounded-b-4xl"
   >
     <!-- Location -->
     <div class="text-xl sm:text-2xl lg:text-4xl font-semibold capitalize">
@@ -253,7 +253,7 @@ function allCard(item) {
       </div>
 
       <button
-        class="rounded-4xl px-4 py-2 sm:p-3 bg-black text-white hover:bg-gray-500 text-xs sm:text-sm shrink-0 book-now-btn"
+        class="rounded-4xl px-5 py-2 bg-gray-100  hover:text-white hover:bg-black text-xs sm:text-base shrink-0 book-now-btn"
         data-id="${item.id}"
         data-type="allSearch"
       >
@@ -273,7 +273,7 @@ function allCard(item) {
 }
 export function renderAll(allSection, data, filters = {}) {
   console.log(filters);
-
+  console.log(data);
   allSection.innerHTML = "";
   const {
     type: fType,
@@ -314,7 +314,7 @@ function tourCard(tour) {
   console.log(tour);
   return `
             <div
-              class="relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden bg-cover bg-center h-[380px] sm:h-[200px] lg:h-130 flex flex-col justify-between rounded-3xl sm:rounded-4xl"
+              class="relative hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden bg-cover bg-center w-[100%] h-[380px] sm:h-full lg:h-130 flex flex-col justify-between rounded-3xl sm:rounded-4xl"
               
             >
             <div class="relative h-[50%] sm:h-[55%] shrink-0">
@@ -365,7 +365,7 @@ function tourCard(tour) {
         /person
       </div>
 
-      <button class="rounded-4xl px-4 py-2 sm:p-3 bg-black text-white hover:bg-gray-500 text-xs sm:text-sm shrink-0 book-now-btn"
+      <button class="rounded-4xl px-5 py-2 bg-gray-100  hover:text-white hover:bg-black text-xs sm:text-base shrink-0 book-now-btn"
       data-id="${tour.id}"
       data-type="tour">
         Book now
@@ -382,6 +382,8 @@ function tourCard(tour) {
 }
 
 export function renderTours(tourSection, tours, filters = {}) {
+  console.log("inside renderTOurs");
+  console.log(filters);
   tourSection.innerHTML = ``;
   if (filters.sort == 0) {
     tours.sort((a, b) => a.price - b.price);
@@ -393,6 +395,7 @@ export function renderTours(tourSection, tours, filters = {}) {
     rating: fRating,
     priceFrom: fPriceFrom,
     priceTo: fPriceTo,
+    location: fLocation,
   } = filters;
   tours.forEach((tour) => {
     const {
@@ -401,14 +404,18 @@ export function renderTours(tourSection, tours, filters = {}) {
       nights: tNights,
       rating: tRating,
       price: tPrice,
+      location: tLocation,
     } = tour;
+    console.log("fLocation", fLocation);
     if (fCategory != tCategory && fCategory != "all") return;
     // console.log("why am here");
     if (fDays > tDays || fNights > tNights) return;
     // console.log("how am here");
     if (fRating > tRating) return;
+    if (fLocation != tLocation && fLocation != undefined) return;
     // console.log("are yr here");
     if (fPriceFrom > tPrice || tPrice > fPriceTo) return;
+    // if (fPriceFrom > tPrice || tPrice > fPriceTo) return;
     // console.log("i am here");
     tourSection.insertAdjacentHTML("beforeend", tourCard(tour));
   });
@@ -417,7 +424,7 @@ export function renderTours(tourSection, tours, filters = {}) {
 function carCard(car) {
   return `
       <div
-  class="group overflow-hidden shrink-0 w-[85%] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3rem)/3)] h-[400px] sm:h-[600px] lg:h-150 flex flex-col rounded-3xl sm:rounded-4xl border border-gray-200 shadow-lg bg-white
+  class="group overflow-hidden shrink-0 w-[100%] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3rem)/3)] h-[400px] sm:h-[600px] lg:h-150 flex flex-col rounded-3xl sm:rounded-4xl border border-gray-200 shadow-lg bg-white
    hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
 >
   <!-- Car Image -->
@@ -492,7 +499,7 @@ function carCard(car) {
         /person
       </div>
 
-      <button class="rounded-4xl px-4 py-2 sm:p-3 bg-black text-white hover:bg-gray-500 text-xs sm:text-sm shrink-0 book-now-btn"
+      <button class="rounded-4xl px-5 py-2 bg-gray-100  hover:text-white hover:bg-black text-xs sm:text-base shrink-0 book-now-btn"
       data-id="${car.id}"
       data-type="car">
         Book now
@@ -544,13 +551,15 @@ export function renderCars(carSection, cars, filters = {}) {
     // if (fPriceFrom > tPrice || tPrice > fPriceTo) return;
     // console.log("i am here");
     // if(filters.brand!=cBrand)return;
+    console.log(cBrand.toLowerCase(), filters.brand.values().next().value);
     if (filters.brand.size != 0 && !filters.brand.has(cBrand.toLowerCase()))
       return;
     carSection.insertAdjacentHTML("afterbegin", carCard(car));
   });
 }
 
-export function renderHotels(slider, data) {
+export function renderHotels(slider, data, filters = {}) {
+  slider.innerHTML = "";
   data.forEach((hotel) => {
     slider.insertAdjacentHTML("beforeend", hotelCard(hotel));
   });
@@ -560,7 +569,7 @@ function hotelCard(hotel) {
   return `
 <div
 class="group bg-white rounded-[32px] overflow-hidden shrink-0
-w-[85%] sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3rem)/3)] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+w-[100%]  sm:w-[calc((100%-1rem)/2)] lg:w-[calc((100%-3rem)/3)] shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
 >
 
 <div class="relative h-64 overflow-hidden">
@@ -597,7 +606,8 @@ class="absolute bottom-4 right-4 bg-white rounded-full px-4 py-2 shadow flex ite
 
 </div>
 
-<div class="p-6">
+<div class="p-6 flex flex-col justify-between">
+
 
 <h3 class="text-2xl font-bold leading-snug">
 
@@ -621,37 +631,22 @@ ${hotel.title}
 
 </div>
 
-<div class="flex justify-between items-center mt-8">
+<div class="flex items-center justify-between gap-2 p-1 mt-2">
+      <div class="text-gray-400 text-xs sm:text-sm shrink-0">
+        <span class="text-lg sm:text-2xl lg:text-3xl font-semibold text-black">
+          $${hotel.price}
+        </span>
+        /person
+      </div>
 
-<div>
+      <button class="rounded-4xl px-5 py-2 bg-gray-100  hover:text-white hover:bg-black text-xs sm:text-base shrink-0 book-now-btn"
+      data-id="${hotel.id}"
+      data-type="hotel">
+        Book now
+      </button>
+    </div>
 
-<span class="text-3xl font-bold">
-
-$${hotel.price}
-
-</span>
-
-<span class="text-gray-500">
-
-/ person
-
-</span>
-
-</div>
-
-<button
-data-type="hotel"
-data-id="${hotel.id}"
-class="book-now-btn px-5 py-2 rounded-full bg-gray-100 hover:bg-black hover:text-white transition"
->
-
-Book Now
-
-</button>
-
-</div>
-
-</div>
+</>
 
 </div>
 `;

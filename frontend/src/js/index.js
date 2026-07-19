@@ -27,6 +27,41 @@ import { createSlider, getVisibleCards } from "./slider.js";
 //   // const data = await fetchData('/api/posts');
 // });
 
+// help section
+(function () {
+  const helpBtn = document.getElementById("help-btn");
+  const modal = document.getElementById("support-modal");
+  const closeBtn = document.getElementById("support-close");
+
+  if (!helpBtn || !modal) return;
+
+  function openModal(e) {
+    e.preventDefault();
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden"; // prevent background scroll
+  }
+
+  function closeModal() {
+    modal.classList.add("hidden");
+    document.body.style.overflow = ""; // restore scroll
+  }
+
+  helpBtn.addEventListener("click", openModal);
+  closeBtn.addEventListener("click", closeModal);
+
+  // Close when clicking the dark backdrop
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  // Close on Escape key
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+      closeModal();
+    }
+  });
+})();
+
 (function () {
   const menuBtn = document.getElementById("mobile-menu-btn");
   const mobileMenu = document.getElementById("mobile-menu");
@@ -52,6 +87,31 @@ import { createSlider, getVisibleCards } from "./slider.js";
   menuBtn.addEventListener("click", () => {
     const isOpen = !mobileMenu.classList.contains("hidden");
     isOpen ? closeMenu() : openMenu();
+  });
+
+  // Accordion dropdown toggle
+  const dropdownBtns = mobileMenu.querySelectorAll(".mobile-dropdown-btn");
+
+  dropdownBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const content = btn.nextElementSibling;
+      const arrow = btn.querySelector(".dropdown-arrow");
+      const isOpen = !content.classList.contains("hidden");
+
+      // Optional: close other open dropdowns (accordion behavior)
+      dropdownBtns.forEach((otherBtn) => {
+        if (otherBtn !== btn) {
+          otherBtn.nextElementSibling.classList.add("hidden");
+          otherBtn
+            .querySelector(".dropdown-arrow")
+            ?.classList.remove("rotate-180");
+        }
+      });
+
+      // Toggle current dropdown
+      content.classList.toggle("hidden", isOpen);
+      arrow?.classList.toggle("rotate-180", !isOpen);
+    });
   });
 
   // Close the menu after tapping a link inside it
@@ -88,6 +148,7 @@ const guestsWrapper = document.getElementById("guestsWrapper");
 const totalPriceEl = document.getElementById("totalPrice");
 
 let currentCardData = {};
+let savedScrollY = 0;
 
 const badgeColors = {
   allSearch: "bg-blue-500/80",
@@ -137,8 +198,11 @@ function openModal(data, type) {
   typeSpecificFields.innerHTML = "";
   guestsWrapper.classList.add("hidden");
 
-  document.body.style.overflow = "hidden"; // 🔒 lock background scroll
-  document.body.style.position = "fixed"; // extra safety for iOS
+  // 🔒 lock scroll WITHOUT losing position
+  savedScrollY = window.scrollY;
+  document.body.style.overflow = "hidden";
+  document.body.style.position = "fixed";
+  document.body.style.top = `-${savedScrollY}px`; // ← keeps visual position
   document.body.style.width = "100%";
 
   if (type === "allSearch") {
@@ -314,8 +378,12 @@ function closeBookingModal() {
   overlay.classList.add("hidden");
   overlay.classList.remove("flex");
   document.body.style.overflow = "";
+  // 🔓 unlock scroll and RESTORE position
+  document.body.style.overflow = "";
   document.body.style.position = "";
+  document.body.style.top = "";
   document.body.style.width = "";
+  window.scrollTo(0, savedScrollY);
 }
 
 closeModalBtn.addEventListener("click", closeBookingModal);
@@ -386,7 +454,18 @@ const searchFilter = {
     adults: 2,
     children: 2,
   },
+  days: 2,
+  nights: 0,
+  rating: 1,
+  priceFrom: 0,
+  priceTo: Number.MAX_SAFE_INTEGER,
+  category: "all",
+  brand: new Set(),
+  seats: 0,
+  transmission: "automatic",
+  fuel: "petrol",
 };
+searchFilter.brand.add("toyota");
 // sliding indicator
 const tabs = document.querySelectorAll(".tab");
 const indicator = document.getElementById("indicator");
@@ -415,6 +494,7 @@ tabs.forEach((tab) => {
     tab.classList.add("text-amber-300");
     tab.classList.remove("text-gray-500");
     searchFilter.type = tab.value;
+    showFieldsFor(tab.value);
     // console.log(searchFilter);
   });
 });
@@ -506,9 +586,42 @@ function changeCount(countSpan, delta) {
   countSpan.innerText = newCount;
 }
 
-searchAll.addEventListener("click", () => {
-  console.log("insise");
-  getAll();
+let daysInput = document.getElementById("days-input");
+
+daysInput.addEventListener("change", () => {
+  console.log(daysInput.value);
+  searchFilter.days = parseInt(daysInput.value);
+});
+
+let brandInput = document.getElementById("brand-input");
+console.log(brandInput);
+
+brandInput.addEventListener("click", () => {
+  searchFilter.brand.clear();
+  searchFilter.brand.add(brandInput.value.toLowerCase());
+});
+
+const searchFor = {
+  hotels: () => getHotels(allSection, searchFilter),
+  tours: () => getTours(allSection, searchFilter),
+  rental: () => getCars(allSection, searchFilter),
+};
+
+searchAll.addEventListener("click", async () => {
+  console.log(Object.keys(searchFor).includes(searchFilter.type));
+  // getAll();
+
+  await searchFor[searchFilter.type]();
+  console.log(allSection.children);
+
+  for (const child of allSection.children) {
+    child.classList.remove(
+      "lg:w-[calc((100%-3rem)/3)]",
+      "sm:w-[calc((100%-1rem)/2)]",
+    );
+    // child.classList.add("h-[380px]", "sm:h-[200px]", "lg:h-130");
+    // child.classList.add("sm:w-[100%]");
+  }
 });
 
 async function getAll() {
@@ -521,6 +634,19 @@ async function getAll() {
     console.log(error.message);
   }
 }
+
+const fields = document.querySelectorAll(".field");
+
+function showFieldsFor(type) {
+  fields.forEach((field) => {
+    if (field.classList.contains(type)) {
+      field.classList.remove("hidden");
+    } else {
+      field.classList.add("hidden");
+    }
+  });
+}
+showFieldsFor(tabs[0].value);
 
 let daysMinusBtn = document.getElementById("daysMinusBtn");
 let daysPlusBtn = document.getElementById("daysPlusBtn");
@@ -550,6 +676,7 @@ let lowSortBtn = document.getElementById("lowSort");
 let highSortBtn = document.getElementById("highSort");
 
 let sortBtn = document.querySelectorAll(".sort");
+let tourSection = document.getElementById("tourSection");
 
 let tourFilters = {
   category: "all",
@@ -571,24 +698,24 @@ sortBtn.forEach((btn) => {
     btn.classList.add("bg-black");
     btn.classList.add("text-white");
     tourFilters.sort = parseInt(btn.value);
-    getTours();
+    getTours(tourSection, tourFilters);
   });
 });
 
 //searchFilter event listener
 // searchTours.addEventListener("click", () => {
-//   getTours();
+//   getTours(tourSection,tourFilters);
 // });
 
 //price range event listener
 priceFrom.addEventListener("change", () => {
   tourFilters.priceFrom = parseInt(priceFrom.value);
-  getTours();
+  getTours(tourSection, tourFilters);
   // console.log(tourFilters);
 });
 priceTo.addEventListener("change", () => {
   tourFilters.priceTo = parseInt(priceTo.value);
-  getTours();
+  getTours(tourSection, tourFilters);
   // console.log(tourFilters);
 });
 
@@ -600,7 +727,7 @@ tourRatings.forEach((tourRating) => {
     // console.log("rati");
     tourFilters.rating = parseInt(tourRating.value);
     ratingBtn.innerHTML = tourRating.innerHTML;
-    getTours();
+    getTours(tourSection, tourFilters);
     // console.log(tourFilters);
   });
 });
@@ -610,7 +737,7 @@ daysMinusBtn.addEventListener("click", () => {
   changeCount(daysCount, -1);
   tourFilters.days = parseInt(daysCount.innerText);
   durationBtn.innerText = `${daysCount.innerText} D & ${nightCount.innerText} N`;
-  getTours();
+  getTours(tourSection, tourFilters);
   // console.log(durationBtn.innerText);
   // console.log(tourFilters);
 });
@@ -618,21 +745,21 @@ daysPlusBtn.addEventListener("click", () => {
   changeCount(daysCount, 1);
   tourFilters.days = parseInt(daysCount.innerText);
   durationBtn.innerText = `${daysCount.innerText} D & ${nightCount.innerText} N`;
-  getTours();
+  getTours(tourSection, tourFilters);
   // console.log(tourFilters);
 });
 nightMinusBtn.addEventListener("click", () => {
   changeCount(nightCount, -1);
   tourFilters.nights = parseInt(nightCount.innerText);
   durationBtn.innerText = `${daysCount.innerText} D & ${nightCount.innerText} N`;
-  getTours();
+  getTours(tourSection, tourFilters);
   // console.log(tourFilters);
 });
 nightPlusBtn.addEventListener("click", () => {
   changeCount(nightCount, 1);
   tourFilters.nights = parseInt(nightCount.innerText);
   durationBtn.innerText = `${daysCount.innerText} D & ${nightCount.innerText} N`;
-  getTours();
+  getTours(tourSection, tourFilters);
   // console.log(tourFilters);
 });
 
@@ -641,14 +768,13 @@ categories.forEach((cat) => {
   cat.addEventListener("click", () => {
     tourFilters.category = cat.value.toLowerCase();
     categoryBtn.innerText = cat.innerText;
-    getTours();
+    getTours(tourSection, tourFilters);
     // console.log(tourFilters);
   });
 });
 
-let tourSection = document.getElementById("tourSection");
-
-async function getTours() {
+async function getTours(section, filters = {}) {
+  console.log("inside getTours");
   try {
     // console.log("entered");
     const response = await fetch("./src/data/tour_cards.json");
@@ -657,12 +783,12 @@ async function getTours() {
     }
     tours = await response.json();
     // console.log(tours);
-    renderTours(tourSection, tours, tourFilters);
+    renderTours(section, tours, filters);
   } catch (error) {
     console.log(error.message);
   }
 }
-getTours();
+getTours(tourSection, tourFilters);
 
 // import { createSlider, getVisibleCards } from "./slider.js";
 
@@ -676,14 +802,15 @@ const carFilters = {
   brand: new Set(),
 };
 
-async function getCars() {
+async function getCars(section, filters = {}) {
   const res = await fetch("./src/data/cars_cards.json");
 
   cars = await res.json();
 
-  renderCars(slider, cars, carFilters);
+  // renderCars(slider, cars, carFilters);
+  renderCars(section, cars, filters);
 
-  carSlider.refresh();
+  if (section == slider) carSlider.refresh();
 }
 
 const carSlider = createSlider({
@@ -698,7 +825,7 @@ const carSlider = createSlider({
   gap: 16,
 });
 
-getCars();
+getCars(slider, carFilters);
 
 // carLogos btn
 let carLogos = document.querySelectorAll(".car-logo");
@@ -719,7 +846,7 @@ carLogos.forEach((logo) => {
     }
     carSlider.setCurrentIndex(0);
     carSlider.refresh();
-    getCars();
+    getCars(slider, carFilters);
   });
 });
 
@@ -794,15 +921,17 @@ const hSlider = document.getElementById("hotelSlider");
 const hotelPrevBtn = document.getElementById("hotelPrev");
 const hotelNextBtn = document.getElementById("hotelNext");
 
-async function getHotels() {
+async function getHotels(section, filters = {}) {
+  console.log("inside getHotels");
   try {
     const response = await fetch("./src/data/hotel.json");
     if (!response.ok) {
       throw new Error("getHotels response error");
     }
     hotels = await response.json();
-    renderHotels(hSlider, hotels);
-    hotelSlider.refresh();
+    console.log(hotels);
+    renderHotels(section, hotels, filters);
+    if (section == hSlider) hotelSlider.refresh();
   } catch (error) {
     console.log(error.message);
   }
@@ -817,7 +946,7 @@ const hotelSlider = createSlider({
 });
 console.log(hotelSlider);
 
-getHotels();
+getHotels(hSlider);
 
 let tSlider = document.getElementById("testimonialSlider");
 let testimonialPrev = document.getElementById("testimonialPrev");
@@ -869,11 +998,11 @@ function hide(e) {
 }
 window.hide = hide;
 
-// if ("serviceWorker" in navigator) {
-//   window.addEventListener("load", () => {
-//     navigator.serviceWorker
-//       .register("./sw.js")
-//       .then(() => console.log("Service Worker Registered"))
-//       .catch(console.error);
-//   });
-// }
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker
+      .register("./sw.js")
+      .then(() => console.log("Service Worker Registered"))
+      .catch(console.error);
+  });
+}

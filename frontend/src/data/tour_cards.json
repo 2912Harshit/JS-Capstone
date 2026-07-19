@@ -9,7 +9,8 @@
         "nights":3,
         "price":10,
         "rating":1,
-        "reviews":100
+        "reviews":100,
+        "location":"california"
     },
     {
         "id":2,
@@ -21,7 +22,8 @@
         "nights":3,
         "price":20,
         "rating":2,
-        "reviews":200
+        "reviews":200,
+        "location":"california"
     },
     {
         "id":3,
@@ -33,7 +35,8 @@
         "nights":3,
         "price":50,
         "rating":3,
-        "reviews":300
+        "reviews":300,
+        "location":"california"
     },
     {
         "id":4,
@@ -45,6 +48,7 @@
         "nights":3,
         "price":48.25,
         "rating":4.96,
-        "reviews":400
+        "reviews":400,
+        "location":"california"
     }
 ]
