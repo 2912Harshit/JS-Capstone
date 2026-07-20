@@ -49,11 +49,11 @@ function newsCard(card) {
           </span>
 
           <!-- Heart -->
-          <button
+          <button 
           aria-label="favourite"
-            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
-            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
-            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+            class="heart-btn absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart"  src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden"  src="./src/assets/images/fav2.png" alt="heart">
 
           </button>
         </div>
@@ -149,6 +149,7 @@ export function renderTopCategoryTours(section, data, filters = {}) {
   data.forEach((card) => {
     section.insertAdjacentHTML("beforeend", topCategoryToursCard(card));
   });
+  // toggleFavourite();
 }
 
 function allCard(item) {
@@ -171,9 +172,9 @@ function allCard(item) {
 
     <button
           aria-label="favourite"
-            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
-            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
-            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+            class="heart-btn absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart"  src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden"   src="./src/assets/images/fav2.png" alt="heart">
 
           </button>
   </div>
@@ -307,6 +308,7 @@ export function renderAll(allSection, data, filters = {}) {
       return;
     }
     allSection.insertAdjacentHTML("beforeend", allCard(card));
+    // toggleFavourite();
   });
 }
 
@@ -331,9 +333,9 @@ function tourCard(tour) {
 
     <button
           aria-label="favourite"
-            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
-            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
-            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+            class="heart-btn absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart"  src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden"   src="./src/assets/images/fav2.png" alt="heart">
 
           </button>
   </div>
@@ -419,6 +421,7 @@ export function renderTours(tourSection, tours, filters = {}) {
     // console.log("i am here");
     tourSection.insertAdjacentHTML("beforeend", tourCard(tour));
   });
+  // toggleFavourite();
 }
 
 function carCard(car) {
@@ -442,9 +445,9 @@ function carCard(car) {
 
     <button
           aria-label="favourite"
-            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
-            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
-            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+            class="heart-btn absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart"  src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden"   src="./src/assets/images/fav2.png" alt="heart">
 
           </button>
   </div>
@@ -556,6 +559,7 @@ export function renderCars(carSection, cars, filters = {}) {
       return;
     carSection.insertAdjacentHTML("afterbegin", carCard(car));
   });
+  // toggleFavourite();
 }
 
 export function renderHotels(slider, data, filters = {}) {
@@ -563,6 +567,7 @@ export function renderHotels(slider, data, filters = {}) {
   data.forEach((hotel) => {
     slider.insertAdjacentHTML("beforeend", hotelCard(hotel));
   });
+  // toggleFavourite();
 }
 
 function hotelCard(hotel) {
@@ -582,9 +587,9 @@ alt="hotel"
 
 <button
           aria-label="favourite"
-            class="absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
-            <img class="heart" onclick="hide(this)" src="./src/assets/images/heart.avif" alt="heart">
-            <img class="red-heart hidden" onclick="hide(this)"  src="./src/assets/images/fav2.png" alt="heart">
+            class="heart-btn absolute top-4 right-4 bg-white w-9 h-9 rounded-full flex items-center justify-center shadow">
+            <img class="heart"  src="./src/assets/images/heart.avif" alt="heart">
+            <img class="red-heart hidden"   src="./src/assets/images/fav2.png" alt="heart">
 
           </button>
 
@@ -753,3 +758,12 @@ export function renderTestimonials(slider, data) {
     slider.insertAdjacentHTML("beforeend", testimonialCard(card));
   });
 }
+// Attach ONCE, globally (put this at the bottom of your file or in your main init)
+// document.addEventListener("click", (e) => {
+//   const btn = e.target.closest(".heart-btn");
+//   if (!btn) return;
+// console.log(btn);
+
+//   btn.children[0].classList.toggle("hidden"); // white heart
+//   btn.children[1].classList.toggle("hidden"); // red heart
+// });

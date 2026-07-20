@@ -31,6 +31,11 @@ content="black-translucent">
   > -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
 <link rel="stylesheet" href="./dist/output.css" />
+<script defer type="module" src="./src/js/index.js"></script>
+    <!-- AI Chatbot Widget -->
+    <script defer src="chatbot/config.js"></script>
+    <script defer src="chatbot/scraper.js"></script>
+    <script defer src="chatbot/chatbot.js"></script>
   </head>
   <body>
     <header class="relative z-50 sticky top-0 bg-white shadow-sm">
@@ -743,71 +748,79 @@ decoding="async"> -->
     </div>
     <main class="w-full">
       <section
-        class="relative bg-center bg-cover pt-10 pb-10 sm:pt-14 sm:pb-14 lg:pt-20 lg:pb-40 px-4 sm:px-6 lg:px-10"
-        style="
-          background-image: url(&quot;./src/assets/images/Hero\ bg.avif&quot;);
-        "
-      >
-        <div
-          class="relative flex flex-col lg:flex-row items-center justify-center lg:justify-evenly gap-8 lg:gap-6 text-center lg:text-left"
+  id="heroSection"
+  class="relative bg-center bg-cover pt-10 pb-10 sm:pt-14 sm:pb-14 lg:pt-20 lg:pb-40 px-4 sm:px-6 lg:px-10 transition-all duration-700"
+  style="background-image: url('./src/assets/images/Hero bg.avif');"
+>
+ <div
+    id="bgLayerA"
+    class="absolute inset-0 bg-center bg-cover transition-opacity duration-700 ease-in-out"
+    style="background-image: url('./src/assets/images/Hero bg.avif'); opacity: 1;"
+  ></div>
+  <div
+    id="bgLayerB"
+    class="absolute inset-0 bg-center bg-cover transition-opacity duration-700 ease-in-out"
+    style="opacity: 0;"
+  ></div>
+  <div
+    class="relative flex flex-col lg:flex-row items-center justify-center lg:justify-evenly gap-8 lg:gap-6 text-center lg:text-left"
+  >
+    <!-- LEFT TEXT -->
+    <div>
+      <p class="inline-block text-base sm:text-lg lg:text-xl font-bold rounded-3xl p-2 bg-yellow-300">
+        Discover the World
+      </p>
+      <div>
+        <h1 id="heroTitle" class="text-3xl sm:text-4xl lg:text-5xl font-bold p-2 leading-tight">
+          Unleash Your Wanderlust
+        </h1>
+        <p id="heroSubtitle" class="text-3xl sm:text-4xl lg:text-5xl font-bold p-2 leading-tight">
+          Book Your Next Journey
+        </p>
+        <p class="text-base sm:text-lg lg:text-xl p-2">
+          Crafting Exceptional Journeys: Your Global Escape Planner.
+        </p>
+        <p class="text-base sm:text-lg lg:text-xl p-2">
+          Unleash Your Wanderlust: Seamless Travel, Extraordinary Adventures
+        </p>
+      </div>
+
+      <!-- SLIDER BUTTONS -->
+      <div class="flex gap-3 justify-center lg:justify-start mt-4">
+        <button
+          id="heroPrev"
+          aria-label="Previous slide"
+          class="w-11 h-11 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow transition"
         >
-          <!-- <img class="absolute z-10 object-center object-fill" src="./src/assets/images/Hero bg.avif" alt=""> -->
-          <div>
-            <p
-              class="inline-block text-base sm:text-lg lg:text-xl font-bold rounded-3xl p-2 bg-yellow-300"
-            >
-              Discover the World
-            </p>
-            <div>
-              <h1
-                class="text-3xl sm:text-4xl lg:text-5xl font-bold p-2 leading-tight"
-              >
-                Unleash Your Wanderlust
-              </h1>
-              <p
-                class="text-3xl sm:text-4xl lg:text-5xl font-bold p-2 leading-tight"
-              >
-                Book Your Next Journey
-              </p>
-              <p class="text-base sm:text-lg lg:text-xl p-2">
-                Crafting Exceptional Journeys: Your Global Escape Planner.
-              </p>
-              <p class="text-base sm:text-lg lg:text-xl p-2">
-                Unleash Your Wanderlust: Seamless Travel, Extraordinary
-                Adventures
-              </p>
-            </div>
-          </div>
-          <div
-            class="pt-4 pb-4 lg:pt-10 lg:pb-10 flex flex-row lg:flex-col items-center justify-center gap-3"
-          >
-            <div class="overflow-hidden rounded-2xl border-3 shrink-0">
-              <img
-                class="h-20 sm:h-28 lg:h-40"
-                src="./src/assets/images/temp photo.avif"
-                alt="floating image"
-              />
-            </div>
-            <div
-              class="overflow-hidden rounded-2xl border-3 shrink-0 hidden sm:block"
-            >
-              <img
-                class="h-20 sm:h-28 lg:h-40"
-                src="./src/assets/images/temp photo.avif"
-                alt="floating image"
-              />
-            </div>
-            <div
-              class="overflow-hidden rounded-2xl border-3 shrink-0 hidden lg:block"
-            >
-              <img
-                class="h-20 sm:h-28 lg:h-40 rounded"
-                src="./src/assets/images/temp photo.avif"
-                alt="floating image"
-              />
-            </div>
-          </div>
-        </div>
+          ←
+        </button>
+        <button
+          id="heroNext"
+          aria-label="Next slide"
+          class="w-11 h-11 rounded-full bg-white/80 hover:bg-white flex items-center justify-center shadow transition"
+        >
+          →
+        </button>
+      </div>
+    </div>
+
+    <!-- FLOATING IMAGES -->
+    <div class="pt-4 pb-4 lg:pt-10 lg:pb-10 flex flex-col items-center justify-center gap-3">
+      <div class="overflow-hidden rounded-2xl border-3 shrink-0">
+        <img id="heroThumb0" class="h-20 sm:h-28 lg:h-40 w-32 lg:w-56 object-cover transition-all duration-500"
+          src="./src/assets/images/temp photo.avif" alt="destination" />
+      </div>
+      <div class="overflow-hidden rounded-2xl border-3 shrink-0  sm:block">
+        <img id="heroThumb1" class="h-20 sm:h-28 lg:h-40 w-32 lg:w-56 object-cover transition-all duration-500"
+          src="./src/assets/images/temp photo.avif" alt="destination" />
+      </div>
+      <div class="overflow-hidden rounded-2xl border-3 shrink-0  lg:block">
+        <img id="heroThumb2" class="h-20 sm:h-28 lg:h-40 w-32 lg:w-56 object-cover transition-all duration-500"
+          src="./src/assets/images/temp photo.avif" alt="destination" />
+      </div>
+    </div>
+  </div>
+<!-- </section> -->
         <section
           class="relative lg:absolute lg:left-1/2 lg:-translate-x-1/2 w-full xl:w-[65%] z-10 mt-8 lg:mt-0"
         >
@@ -2433,11 +2446,7 @@ decoding="async"> -->
     </div>
   </div>
 </div>
-    <script type="module" src="./src/js/index.js"></script>
-    <!-- AI Chatbot Widget -->
-<div id="ai-chatbot-root"></div>
-<script src="chatbot/config.js"></script>
-<script src="chatbot/scraper.js"></script>
-<script src="chatbot/chatbot.js"></script>
+    
+    <div id="ai-chatbot-root"></div>
 </body>
 </html>
