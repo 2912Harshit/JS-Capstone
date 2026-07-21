@@ -290,6 +290,7 @@ async function getTours(section, filters = {}) {
   try {
     await getToursData(section, filters);
   } catch (error) {
+    toast.error("Cannot get Tours",2000);
     console.log(error.message);
   }
 }
@@ -312,6 +313,8 @@ async function getCars(section, filters = {}) {
     await getCarsData(section, filters);
     if (section == slider) carSlider.refresh();
   } catch (error) {
+    toast.error("Cannot get Cars", 2000);
+
     console.log(error.message);
   }
 }
@@ -380,6 +383,8 @@ async function getTopCategoryTours() {
       topCategoryTourFilter,
     );
   } catch (error) {
+    toast.error("Cannot get Top Category Tours", 2000);
+
     console.log(error.message);
   }
 }
@@ -408,6 +413,8 @@ async function getNews() {
   try {
     await getNewsData(newsSection, newsFilter);
   } catch (error) {
+    toast.error("Cannot get News and Guides", 2000);
+
     console.log(error.message);
   }
 }
@@ -423,6 +430,8 @@ async function getHotels(section, filters = {}) {
     await getHotelsData(section, filters);
     if (section == hSlider) hotelSlider.refresh();
   } catch (error) {
+    toast.error("Cannot get Hotels", 2000);
+
     console.log(error.message);
   }
 }
@@ -447,6 +456,8 @@ async function getTestimonials() {
     await getTestimonialsData(tSlider);
     testimonialSlider.refresh();
   } catch (error) {
+    toast.error("Cannot get Testimonials", 2000);
+
     console.log(error.message);
   }
 }
@@ -503,3 +514,5 @@ document.addEventListener("click", (e) => {
 document.addEventListener("DOMContentLoaded", () => {
   initHeroSlider();
 });
+
+
